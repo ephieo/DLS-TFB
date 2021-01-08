@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Label } from './../components /Form';
+import { Form, Input, Label } from './../components/Form';
 
 function Login() {
   return (

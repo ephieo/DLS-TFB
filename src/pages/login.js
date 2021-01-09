@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 function Login() {
   return (
-    <body>
+    <div>
       <h1>login</h1>
       <Form>
-        <Label for="email">Email:</Label>
+        <Label htmlFor="email">Email:</Label>
         <br />
         <Input type="email" id="email" name="email" />
-        <Label for="email">Password:</Label>
+        <Label htmlFor="email">Password:</Label>
         <br />
         <Input type="password" id="password" name="password" />
         <SubmitButton type="submit" />
@@ -19,7 +19,7 @@ function Login() {
       <Link to="/signup">
         <button>SignUp</button>
       </Link>
-    </body>
+    </div>
   );
 }
 

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Form, Input, Label, SubmitButton } from './../components/Form';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
 function Signup() {
@@ -9,9 +9,10 @@ function Signup() {
   const confirmPasswordRef = useRef();
   //calling and intializing useAuth() to use the signup function to create new users and call
   //the unsubsribe function in the useffect()
-  const { signup, currentUser } = useAuth();
+  const { signup } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -23,6 +24,7 @@ function Signup() {
       setError('');
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
+      history.push('/');
     } catch {
       setError('Failed to create an account');
     }
@@ -32,7 +34,6 @@ function Signup() {
   return (
     <div>
       <h1>Sign up</h1>
-      {currentUser ? JSON.stringify(currentUser.email) : <h1>no users yet</h1>}
       {error ? alert(error) : null}
       <Form onSubmit={handleSubmit}>
         <Label htmlFor="email">Email:</Label>

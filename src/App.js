@@ -8,15 +8,15 @@ import {AuthProvider} from './contexts/AuthContext';
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <Switch>
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={Signup} />
-          <Route exact path="/" component={LandingPage} />
-        </Switch>
-      </Router>
-    </AuthProvider>
+    <Router>
+      <AuthProvider>
+          <Switch>
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={Signup} />
+            <Route exact path="/" component={LandingPage} />
+          </Switch>
+      </AuthProvider>
+    </Router>
   );
 }
 

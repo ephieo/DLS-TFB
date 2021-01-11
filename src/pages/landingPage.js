@@ -3,15 +3,6 @@ import { Link } from 'react-router-dom';
 
 function LandingPage() {
 
-function handleLogout (){
-  try{
-   
-  }
-  catch{
-    
-  }
-}
-  
   return (
     <div>
       <h1>LANDING PAGE</h1>
@@ -21,8 +12,6 @@ function handleLogout (){
       <Link to="/signup">
         <button>SignUp</button>
       </Link>
-      <button onClick={handleLogout}>Log out</button>
-    
     </div>
   );
 }

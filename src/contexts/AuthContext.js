@@ -27,20 +27,25 @@ export function AuthProvider({ children }) {
   //onAuthStateChanged is triggered when a user signs in and signs out,
   // and returns an unsubscribe to stop that function from running
 
+  function logout() {
+    return auth.signOut();
+  }
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       setCurrentUser(user)
       setUserLoading(false)
     })
     
-    return unsubscribe;    
+    return unsubscribe;  
   }, [])
 
   //passing the value of the current user into the context provider below.
   const value = {
     currentUser,
     signup,
-    login
+    login,
+    logout
   };
 
   return (

@@ -8,7 +8,8 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
-  border: blue solid 3px;
+  border: transparent solid 3px;
+  border-bottom: blue solid 3px;
   width: 70%;
   height: 10%;
   margin: 1rem;
@@ -20,7 +21,7 @@ export const Label = styled.label`
 `;
 
 export const SubmitButton = styled.input`
-  width: 20%;
+  /* width: 20%; */
   height: 10%;
   border: solid blue 3px;
   margin: 1rem;

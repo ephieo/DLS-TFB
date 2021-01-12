@@ -13,29 +13,35 @@ function AccountUpdate() {
     const [loading, setLoading] = useState(false);
     const history = useHistory();
   
-    async function handleSubmit(e) {
+    function handleSubmit(e) {
       e.preventDefault();
   
       if (passwordRef.current.value !== confirmPasswordRef.current.value) {
         return setError('Passwords do not match');
       }
 
-    const promises = [];
-    if(emailRef.current.value !== currentUser.email){
-        promises.push(updateEmail(emailRef.current.value))
-    }
+      const promises = [];
 
-      try {
-        setError('');
-        setLoading(true);
-        // await updateEmail(emailRef.current.value);
-        history.push('/account');
-      } catch {
-        setError('Failed to create an account');
+      setLoading(true);
+      setError('')
+
+      if(emailRef.current.value !== currentUser.email){
+        promises.push(updateEmail(emailRef.current.value))
       }
-      setLoading(false);
-    }
-  
+
+      if(passwordRef.current.value) {
+        promises.push(updatePassword(passwordRef.current.value))
+      }
+
+      Promise.all(promises).then(() => {
+        history.push('/account')
+      }).catch(() => {
+        setError("Failed to update account")
+      }).finally(() => {
+        setLoading(false);
+      })
+    }  
+    
     return (
       <div>
         <h1>Update</h1>

@@ -7,6 +7,7 @@ import {AuthProvider} from './contexts/AuthContext';
 import AccountPage from './pages/accountPage';
 import PrivateRoute from './utils/PrivateRoute';
 import ForgotPassword from './pages/forgotPassword';
+import AccountUpdate from './pages/accountUpdate';
 //import OptionsPage from "./pages/optionsPage";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route exact path="/" component={LandingPage} />
             <Route path="/forgot-password" component={ForgotPassword} />
             <PrivateRoute path="/account" component={AccountPage} />
+            <PrivateRoute path="/account-update" component={AccountUpdate} />
             
           </Switch>
       </AuthProvider>

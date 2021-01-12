@@ -24,11 +24,17 @@ export function AuthProvider({ children }) {
     return auth.signInWithEmailAndPassword(email, password)
   }
 
+  
+
   //onAuthStateChanged is triggered when a user signs in and signs out,
   // and returns an unsubscribe to stop that function from running
 
   function logout() {
     return auth.signOut();
+  }
+
+  function resetPassword(email){
+    return auth.sendPasswordResetEmail(email)
   }
 
   useEffect(() => {
@@ -45,7 +51,8 @@ export function AuthProvider({ children }) {
     currentUser,
     signup,
     login,
-    logout
+    logout,
+    resetPassword
   };
 
   return (

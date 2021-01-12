@@ -46,10 +46,16 @@ function Login() {
           <button>Loading...</button>
         )}
       </Form>
+      <div>
+        <Link to="/forgot-password">Forgot Password?</Link>
+      </div>
       <h1>No account ? signup here: </h1>
       <Link to="/signup">
         <button>SignUp</button>
       </Link>
+      <div>
+        <Link to="/forgot-password">Forgot Password?</Link>
+      </div>
     </div>
   );
 }

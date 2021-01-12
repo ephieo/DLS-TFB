@@ -20,7 +20,7 @@ export const Label = styled.label`
 `;
 
 export const SubmitButton = styled.input`
-  width: 20%;
+  /* width: 20%; */
   height: 10%;
   border: solid blue 3px;
   margin: 1rem;

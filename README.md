@@ -30,3 +30,6 @@ An app that uses educational quizzes and resources to help fight against fake ne
 
 # Week 1 Sprint Recap :
 
+# Team
+ - Jihyun Jang - Fullstack Developer 
+ - Ephie Oyedoh - Fullstack Developer

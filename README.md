@@ -24,7 +24,8 @@ An app that uses educational quizzes and resources to help fight against fake ne
 <br/>
 ### Figma Prototype 
 
-![image](https://user-images.githubusercontent.com/60614102/104489376-75509400-55c7-11eb-9495-018f192ef477.png)
+![image](https://user-images.githubusercontent.com/60614102/104489629-c19bd400-55c7-11eb-907d-f269f193fce9.png)
+
 
 # Week 1 Sprint Recap :
 

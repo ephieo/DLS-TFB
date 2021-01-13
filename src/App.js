@@ -8,6 +8,7 @@ import AccountPage from './pages/accountPage';
 import PrivateRoute from './utils/PrivateRoute';
 import ForgotPassword from './pages/forgotPassword';
 import AccountUpdate from './pages/accountUpdate';
+import QuizPage from './pages/quizzesPage';
 //import OptionsPage from "./pages/optionsPage";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/forgot-password" component={ForgotPassword} />
             <PrivateRoute path="/account" component={AccountPage} />
             <PrivateRoute path="/account-update" component={AccountUpdate} />
+            <PrivateRoute path="/quiz" component={QuizPage} />
             
           </Switch>
       </AuthProvider>

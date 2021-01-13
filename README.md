@@ -16,7 +16,8 @@ An app that uses educational quizzes and resources to help fight against fake ne
 
 <br/>
 
-![image](https://user-images.githubusercontent.com/60614102/104488992-096e2b80-55c7-11eb-82aa-cd4be08c4cfc.png)
+![image](https://user-images.githubusercontent.com/60614102/104489891-12abc800-55c8-11eb-9a84-102bc0348b49.png)
+
 
 <br/>
 

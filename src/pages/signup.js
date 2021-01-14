@@ -57,6 +57,10 @@ function Signup() {
           required
         />
         {!loading ? (
+        />
+        {!loading ? (
+        />
+        {!loading ? (
           <SubmitButton type="submit" />
         ) : (
           <button>Loading...</button>

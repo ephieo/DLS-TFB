@@ -1,20 +1,24 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
+import MultipleChoice from './MultipleChoicePage';
+import FlashCardQuiz from './FlashCardPage';
 
 export default function QuizOptionPage() {
-  const history = useHistory();
-  console.log(history);
+  const location = useLocation();
   return (
     <div>
-      <button>Multiple Choice Quiz</button>
-      <h1>hello</h1>
-
-      <button>Flash Cards Quiz </button>
+      <>
+        <Link to="/k3/quiz-option/multiple-choice">
+          <button>Multiple Choice Quiz</button>
+        </Link>
+        <Link to="/k3/quiz-option/flash-card">
+          <button>Flash Cards Quiz </button>
+        </Link>
+        {location.pathname.includes('multiple-choice') ? (
+          <MultipleChoice />
+        ) : null}
+        {location.pathname.includes('flash-card') ? <FlashCardQuiz /> : null}
+      </>
     </div>
   );
 }
-
-//quizPge
-//k3:quiz-option
-//k3:multiple choice
-//k3:flash-card

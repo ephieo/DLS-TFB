@@ -8,9 +8,10 @@ function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const confirmPasswordRef = useRef();
+  const userNameRef = useRef();
   //calling and intializing useAuth() to use the signup function to create new users and call
   //the unsubsribe function in the useffect()
-  const { signup, currentUser } = useAuth();
+  const { signup } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const history = useHistory();  
@@ -25,7 +26,7 @@ function Signup() {
       setError('');
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value)
-      .then(data => signupDB(data.user.uid, data.user.email));
+      .then(data => signupDB(data.user.uid, data.user.email, userNameRef.current.value));
       history.push('/account');
     } catch {
       setError('Failed to create an account');
@@ -38,9 +39,12 @@ function Signup() {
       <h1>Sign up</h1>
       {error ? alert(error) : null}
       <Form onSubmit={handleSubmit}>
+        <Label htmlFor="userName">Name:</Label>
+        <br />
+        <Input type="text" id="userName" name="userName" ref={userNameRef} required/>
         <Label htmlFor="email">Email:</Label>
         <br />
-        <Input type="email" id="email" name="email" ref={emailRef} />
+        <Input type="email" id="email" name="email" ref={emailRef} required/>
         <Label htmlFor="email">Password:</Label>
         <br />
         <Input

@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Form, Input, Label, SubmitButton } from './../components/Form';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { signupDB } from './../database/queries'
 
 function Signup() {
   const emailRef = useRef();
@@ -12,7 +13,7 @@ function Signup() {
   const { signup } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const history = useHistory();
+  const history = useHistory();  
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -23,7 +24,8 @@ function Signup() {
     try {
       setError('');
       setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
+      await signup(emailRef.current.value, passwordRef.current.value)
+      .then(data => signupDB(data.user.uid, data.user.email));      
       history.push('/account');
     } catch {
       setError('Failed to create an account');

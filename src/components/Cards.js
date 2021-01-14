@@ -14,6 +14,7 @@ export const QuizContainer = styled.div`
 `;
 export const ImgCont = styled.div`
   display: flex;
+  background: #08302e;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -38,6 +39,7 @@ export const QuestionCont = styled.div`
   border: solid #adebad 3px;
   margin: 2rem;
   border-radius: 20px;
+  background: #08302e;
 `;
 export const QuestionBtn = styled.button`
   display: flex;
@@ -48,8 +50,9 @@ export const QuestionBtn = styled.button`
   border: solid #adebad 3px;
   margin: 1rem;
   border-radius: 20px;
-  background: transparent;
+  background: #08302e;
   color: #adebad;
+  padding: 1rem;
 `;
 
 export const Img = styled.img`

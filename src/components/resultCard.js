@@ -22,7 +22,9 @@ export default function ResultCard({ imgSrc, text }) {
         <br />
         <Link to="/account">
           <QuestionBtn
-            onClick={updateScore(currentUser.uid)}
+            onClick={() => {
+              updateScore(currentUser.uid);
+            }}
             background={'#08302e'}
           >
             Account

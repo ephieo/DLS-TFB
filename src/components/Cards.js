@@ -50,7 +50,7 @@ export const QuestionBtn = styled.button`
   border: solid #adebad 3px;
   margin: 1rem;
   border-radius: 20px;
-  background: #08302e;
+  background: ${(props) => props.background || '#08302e'};
   color: #adebad;
   padding: 1rem;
 `;

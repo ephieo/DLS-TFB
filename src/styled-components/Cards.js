@@ -5,11 +5,12 @@ export const QuizContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 50vw;
-  height: 90vh;
+  height: ${(props) => props.height || 'none'};
   border: solid #08302e 3px;
   border-radius: 20px;
-  background: #08302e;
+  background: ${(props) => props.background || '#08302e'};
   box-shadow: 7px 7px 5px grey;
 `;
 export const ImgCont = styled.div`

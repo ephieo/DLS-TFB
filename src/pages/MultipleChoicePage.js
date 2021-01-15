@@ -5,14 +5,18 @@ import {
   QuestionCont,
   QuestionBtn,
   Img,
-} from './../components/Cards';
+} from '../styled-components/Cards';
 
 import { db } from './../database/firebase';
+
+import DescriptionCard from './../components/descriptionCard';
 
 export default function MultipleChoice() {
   const [data, setData] = useState([]);
   const [question, setQuestion] = useState(0);
   const [colour, setColour] = useState('transparent');
+  const [toggle, setToggle] = useState(false);
+  const [what, setWhat] = useState();
 
   const docRef = db
     .collection('Quizzes')
@@ -44,9 +48,13 @@ export default function MultipleChoice() {
     console.log('check', check[0].answer);
 
     if (check[0].answer === false) {
+      setToggle(true);
       setColour('red');
+      setWhat(check[0]);
     } else {
+      setToggle(true);
       setColour('green');
+      setWhat(check[0]);
     }
   }
 
@@ -54,35 +62,45 @@ export default function MultipleChoice() {
     <div className="mc">
       {data[question] ? (
         <>
-          <QuizContainer>
-            <ImgCont>
-              <ImgCont width="100%" height="10%">
-                {data[question].question}
+          {!toggle ? (
+            <QuizContainer>
+              <ImgCont>
+                <ImgCont width="100%" height="10%">
+                  {data[question].question}
+                </ImgCont>
+                <Img src={data[question].image} alt="question img" />
               </ImgCont>
-              <Img src={data[question].image} alt="question img" />
-            </ImgCont>
-            <QuestionCont>
-              {data[question].options.map((e) => (
-                <>
-                  <QuestionBtn
-                    onClick={correctAnswer}
-                    background={colour}
-                    key={data[question].options.text}
-                  >
-                    {e.text}
-                  </QuestionBtn>
-                  <br />
-                </>
-              ))}
-            </QuestionCont>
-            {/* <QuestionBtn></QuestionBtn> */}
-          </QuizContainer>
+              <QuestionCont>
+                {data[question].options.map((e) => (
+                  <>
+                    <QuestionBtn
+                      onClick={correctAnswer}
+                      background={colour}
+                      key={data[question].options.text}
+                    >
+                      {e.text}
+                    </QuestionBtn>
+                    <br />
+                  </>
+                ))}
+              </QuestionCont>
+              {/* <QuestionBtn></QuestionBtn> */}
+            </QuizContainer>
+          ) : (
+            <DescriptionCard
+              background={colour}
+              answerObj={what}
+              question={question}
+              setQuestion={setQuestion}
+              toggle={toggle}
+              setToggle={setToggle}
+              setColour={setColour}
+            />
+          )}
         </>
       ) : (
         'null'
       )}
-
-      {/* {data.length > 0 ? data.map((e) => <h2>{e.question}</h2>) : null} */}
     </div>
   );
 }

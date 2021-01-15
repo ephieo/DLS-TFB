@@ -1,4 +1,5 @@
 import { db } from './firebase';
+
 import 'firebase/firestore';
 
 export function updateScore(uid) {
@@ -22,4 +23,9 @@ export function updateScore(uid) {
     .collection('users')
     .doc(uid)
     .updateData({ score: currentScore + 100 });
+
+
+export function signupDB(uid, email, userName) {
+    return db.collection("users").doc(uid).set({ email: email, score: 0, userName: userName });
+
 }

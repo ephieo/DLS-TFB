@@ -27,6 +27,7 @@ export const ImgCont = styled.div`
   overflow: hidden;
   padding-left: ${(props) => props.border || '2rem'};
   padding-right: ${(props) => props.border || '2rem'};
+  color: #adebad;
 `;
 //solid #adebad 3px
 

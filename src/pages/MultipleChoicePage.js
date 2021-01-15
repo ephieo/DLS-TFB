@@ -10,6 +10,10 @@ import {
 import { db } from './../database/firebase';
 
 import DescriptionCard from './../components/descriptionCard';
+import ResultCard from './../components/resultCard';
+
+import loser from './../images/loser.png';
+import winner from './../images/winner.png';
 
 export default function MultipleChoice() {
   const [data, setData] = useState([]);
@@ -17,6 +21,8 @@ export default function MultipleChoice() {
   const [colour, setColour] = useState('transparent');
   const [toggle, setToggle] = useState(false);
   const [what, setWhat] = useState();
+  const [win, setWin] = useState(true);
+  const [score, setScore] = useState(0);
 
   const docRef = db
     .collection('Quizzes')
@@ -51,6 +57,7 @@ export default function MultipleChoice() {
       setToggle(true);
       setColour('red');
       setWhat(check[0]);
+      setWin(false);
     } else {
       setToggle(true);
       setColour('green');
@@ -98,25 +105,15 @@ export default function MultipleChoice() {
             />
           )}
         </>
+      ) : question > collectionArr.length - 1 ? (
+        win ? (
+          <ResultCard imgSrc={winner} text={'better luck next time!! '} />
+        ) : (
+          <ResultCard imgSrc={loser} text={'better luck next time!! '} />
+        )
       ) : (
         'null'
       )}
     </div>
   );
 }
-
-// useEffect(() => {
-//   docRef
-//     .get()
-//     .then((doc) => {
-//       if (doc.exists) {
-//         console.log(doc.data());
-//         setData(doc.data());
-//       } else {
-//         console.log('No such document!');
-//       }
-//     })
-//     .catch((error) => {
-//       console.log('Error getting document:', error);
-//     });
-// }, []);

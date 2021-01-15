@@ -22,7 +22,7 @@ export default function MultipleChoice() {
   const [toggle, setToggle] = useState(false);
   const [what, setWhat] = useState();
   const [win, setWin] = useState(true);
-  const [score, setScore] = useState(0);
+  // const [score, setScore] = useState(0);
 
   const docRef = db
     .collection('Quizzes')

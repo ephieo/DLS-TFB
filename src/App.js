@@ -6,6 +6,7 @@ import LandingPage from './pages/landingPage';
 import { AuthProvider } from './contexts/AuthContext';
 import AccountPage from './pages/accountPage';
 import PrivateRoute from './utils/PrivateRoute';
+import PublicRoute from './utils/PublicRoute';
 import ForgotPassword from './pages/forgotPassword';
 import AccountUpdate from './pages/accountUpdate';
 import QuizStagePage from './pages/quizzesStagePage';
@@ -17,9 +18,10 @@ function App() {
     <Router>
       <AuthProvider>
         <Switch>
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={Signup} />
-          <Route path="/forgot-password" component={ForgotPassword} />
+          <PublicRoute exact path="/" component={LandingPage} />
+          <PublicRoute path="/login" component={Login} />
+          <PublicRoute path="/signup" component={Signup} />
+          <PublicRoute path="/forgot-password" component={ForgotPassword} />
           <PrivateRoute path="/account" component={AccountPage} />
           <PrivateRoute path="/account-update" component={AccountUpdate} />
           <PrivateRoute path="/quiz-stage" component={QuizStagePage} />
@@ -27,7 +29,6 @@ function App() {
             path="/:stage/quiz-option/:title"
             component={QuizOptionPage}
           />
-          <Route exact path="/" component={LandingPage} />
         </Switch>
       </AuthProvider>
     </Router>

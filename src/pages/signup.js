@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Form, Input, Label, SubmitButton } from './../components/Form';
+import { Form, Input, Label, SubmitButton } from '../styled-components/Form';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { signupDB } from './../database/queries'

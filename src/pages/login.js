@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Form, Input, Label, SubmitButton } from './../components/Form';
+import { Form, Input, Label, SubmitButton } from '../styled-components/Form';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -20,9 +20,8 @@ function Login() {
       setError('');
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      history.push("/account");
+      history.push('/account');
     } catch {
-      
       setError('Failed to log in');
     }
     setLoading(false);
@@ -34,12 +33,17 @@ function Login() {
       <Form onSubmit={handleSubmit}>
         <Label htmlFor="email">Email:</Label>
         <br />
-        <Input type="email" id="email" name="email"ref={emailRef} />
+        <Input type="email" id="email" name="email" ref={emailRef} />
         <Label htmlFor="email">Password:</Label>
         <br />
-        <Input type="password" id="password" name="password" ref={passwordRef}
+        <Input
+          type="password"
+          id="password"
+          name="password"
+          ref={passwordRef}
           minLength="7"
-          required/>
+          required
+        />
         {!loading ? (
           <SubmitButton type="submit" />
         ) : (

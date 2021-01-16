@@ -34,6 +34,7 @@ export default function MultipleChoiceCard({data, colour,question,setToggle,setC
         <div>
              <QuizContainer>
               <ImgCont>
+              <h1>{data[question].questionNum}</h1>
                 <ImgCont width="100%" height="10%">
                   {data[question].question}
                 </ImgCont>

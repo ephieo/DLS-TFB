@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {
-  // QuizContainer,
-  // ImgCont,
-  // QuestionCont,
   QuestionBtn
-  // Img,
 } from '../styled-components/Cards';
 
 import { db } from './../database/firebase';

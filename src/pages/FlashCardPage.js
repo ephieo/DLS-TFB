@@ -1,10 +1,117 @@
-import React from 'react';
-//import { Link, useHistory, useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { db } from './../database/firebase';
+import { useAuth } from './../contexts/AuthContext';
+import FlashCard from './../components/flashCard';
+import {
+ 
+  QuestionBtn,
+
+} from './../styled-components/Cards';
+
+import { Link, useLocation } from 'react-router-dom';
+import { updateScore } from './../database/queries';
+
+import DescriptionCard from './../components/descriptionCard';
+import ResultCard from './../components/resultCard';
+
+import loser from './../images/loser.png';
+import winner from './../images/winner.png';
 
 export default function FlashCardQuiz() {
+
+  const { currentUser } = useAuth();
+
+  const [data, setData] = useState([]);
+  const [question, setQuestion] = useState(0);
+  const [colour, setColour] = useState('transparent');
+  const [toggle, setToggle] = useState(false);
+  const [answer, setAnswer] = useState();
+  const [win, setWin] = useState(true);
+  const [stage, setStage] = useState('key-stage-3');
+  const [timer,setTimer] = useState(false);
+
+  
+const location = useLocation();
+
+if(stage && location.pathname.includes('k4') ){
+  setStage('key-stage-4')
+}
+
+let docRef;
+
+if(stage){
+  docRef = db
+    .collection('Quizzes')
+    .doc(stage)
+    .collection('true-false');
+}
+   
+
+  const collectionArr = [];
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTimer(true);
+    }, 3000);
+
+    if(stage) {
+      docRef
+      .get()
+      .then((result) => {
+        return result.docs.forEach((doc) => {
+          collectionArr.push(doc.data());
+        });
+      })
+      .then(() => {
+        console.log('array', collectionArr);
+        return setData(collectionArr);
+      })
+      .catch((error) => console.log(error));}
+      return () => clearTimeout(timer);
+    }, []);
   return (
     <div>
-      <h1>flashcard quiz goes here </h1>
+      {data[question] ? 
+       !toggle ?
+       <FlashCard 
+              data={data} 
+              question={question}  
+              setToggle={setToggle} 
+              setAnswer={setAnswer} 
+              setWin={setWin}
+              setColour={setColour} 
+              colour={colour}
+              />
+       : <DescriptionCard
+              background={colour}
+              answerObj={answer}
+              question={question}
+              setQuestion={setQuestion}
+              toggle={toggle}
+              setToggle={setToggle}
+              setColour={setColour}
+            />
+             :  question > collectionArr.length - 1 ? (
+              win && timer ?  (
+                <ResultCard imgSrc={winner} text={'Congrats!! '}>
+      
+                <Link to="/account">
+                <QuestionBtn
+                  onClick={() => {
+                    updateScore(currentUser.uid);
+                  }}
+                  background={'#08302e'}
+                >
+                  Click Here to Save progress !
+                </QuestionBtn>
+              </Link>
+                </ResultCard>
+              ) : !win && timer ?(          
+                <ResultCard imgSrc={loser} text={'Better luck next time!! '} ><Link to="/account">Account</Link></ResultCard> 
+              ):null
+            ) : (
+              'null'
+            )}
     </div>
   );
 }

@@ -12,7 +12,7 @@ import AccountUpdate from './pages/accountUpdate';
 import QuizStagePage from './pages/quizzesStagePage';
 import QuizOptionPage from './pages/k3QuizOptionsPage';
 // import MultipleChoice from './pages/MultipleChoicePage';
-//import OptionsPage from "./pages/optionsPage";
+import OptionsPage from './pages/optionsPage';
 
 function App() {
   return (
@@ -27,6 +27,7 @@ function App() {
           <PrivateRoute path="/account-update" component={AccountUpdate} />
           <PrivateRoute path="/quiz-stage" component={QuizStagePage} />
           <PrivateRoute path="/:stage/quiz-option" component={QuizOptionPage} />
+          <PrivateRoute path="/options" component={OptionsPage} />
           <PrivateRoute
             path="/:stage/quiz-option/:title"
             // component={MultipleChoice}

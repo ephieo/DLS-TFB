@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Form, Input, Label, SubmitButton } from '../styled-components/Form';
+import { Form, Title, Input, Label, SubmitButton, Text, TextBottom } from '../styled-components/Form';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -28,14 +28,12 @@ function Login() {
   }
   return (
     <div>
-      <h1>login</h1>
       {error ? alert(error) : null}
       <Form onSubmit={handleSubmit}>
-        <Label htmlFor="email">Email:</Label>
-        <br />
+        <Title>Login</Title>
+        <Label htmlFor="email">Email:</Label>        
         <Input type="email" id="email" name="email" ref={emailRef} />
-        <Label htmlFor="email">Password:</Label>
-        <br />
+        <Label htmlFor="password">Password:</Label>        
         <Input
           type="password"
           id="password"
@@ -44,22 +42,16 @@ function Login() {
           minLength="7"
           required
         />
+        <Text>
+          <Link to="/forgot-password" style={{ textDecoration: 'none', color: 'black' }} >Forgot Password?</Link>
+        </Text>
         {!loading ? (
-          <SubmitButton type="submit" />
+          <SubmitButton type="submit" value="Log in" />
         ) : (
           <button>Loading...</button>
         )}
-      </Form>
-      <div>
-        <Link to="/forgot-password">Forgot Password?</Link>
-      </div>
-      <h1>No account ? signup here: </h1>
-      <Link to="/signup">
-        <button>SignUp</button>
-      </Link>
-      <div>
-        <Link to="/forgot-password">Forgot Password?</Link>
-      </div>
+        <TextBottom>Don't have an account? <Link to="/signup" style={{ textDecoration: 'none', color: '#79CF98' }}>SignUp</Link></TextBottom>
+      </Form>           
     </div>
   );
 }

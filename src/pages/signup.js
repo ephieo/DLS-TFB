@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Form, Input, Label, SubmitButton } from '../styled-components/Form';
+import { Form, Title, Input, Label, SubmitButton, TextBottom } from '../styled-components/Form';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { signupDB } from './../database/queries'
@@ -36,17 +36,14 @@ function Signup() {
 
   return (
     <div>
-      <h1>Sign up</h1>
       {error ? alert(error) : null}
       <Form onSubmit={handleSubmit}>
-        <Label htmlFor="userName">Name:</Label>
-        <br />
+        <Title>Sign up</Title>
+        <Label htmlFor="userName">Name:</Label>        
         <Input type="text" id="userName" name="userName" ref={userNameRef} required/>
-        <Label htmlFor="email">Email:</Label>
-        <br />
+        <Label htmlFor="email">Email:</Label>        
         <Input type="email" id="email" name="email" ref={emailRef} required/>
-        <Label htmlFor="email">Password:</Label>
-        <br />
+        <Label htmlFor="password">Password:</Label>      
         <Input
           type="password"
           id="password"
@@ -55,6 +52,7 @@ function Signup() {
           minLength="7"
           required
         />
+        <Label htmlFor="confirmPassword">Password Confirmation:</Label>      
         <Input
           type="password"
           id="confirmPassword"
@@ -68,11 +66,9 @@ function Signup() {
         ) : (
           <button>Loading...</button>
         )}
+      <TextBottom> Already have an account ? <Link to="/login" style={{ textDecoration: 'none', color: '#79CF98' }} >LogIn</Link></TextBottom>
       </Form>
-      <h1> Already have an account ? </h1>
-      <Link to="/login">
-        <button>LogIn</button>
-      </Link>
+      
     </div>
   );
 }

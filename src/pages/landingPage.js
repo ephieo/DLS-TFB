@@ -1,18 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {db} from './../database/firebase';
+import mobileLife from './../images/MobileLife.svg';
+import { MainImg, Button, BtnContainer } from './../styled-components/Landig';
 
 function LandingPage() {
 
   return (
     <div>
-      <h1>LANDING PAGE</h1>
-      <Link to="/login">
-        <button>LogIn</button>
-      </Link>
-      <Link to="/signup">
-        <button>SignUp</button>
-      </Link>
+      <MainImg src={mobileLife} alt="Mobile Life"/>
+      <BtnContainer>
+        <Link to="/signup"><Button type="button" value="Sign Up" /></Link>
+        <Link to="/login"><Button type="button" value="Log In" /></Link>
+      </BtnContainer>     
     </div>
   );
 }

@@ -40,10 +40,22 @@ export const SubmitButton = styled.input`
   box-shadow: 2px 2px 3px gray;
 `;
 
+export const BtnDisabled = styled.input`
+  background-color: #E4EBE6;
+  color: white;
+  padding: 0.7rem;
+  width: 100%;  
+  border: none;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  margin: 1.5rem auto 0.5rem;  
+`;
+
 export const Text = styled.p`
   text-align: right;    
 `;
 
 export const TextBottom = styled.p`
-  text-align: center;   
+  text-align: center;
+  padding-top: 0.7rem;
 `;

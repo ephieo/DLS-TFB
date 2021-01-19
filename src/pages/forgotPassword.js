@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Form, Title, Input, Label, SubmitButton, TextBottom } from '../styled-components/Form';
+import { Form, Title, Input, Label, SubmitButton, BtnDisabled, TextBottom } from '../styled-components/Form';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -33,7 +33,7 @@ function ForgotPassword() {
         {!loading ? (
           <SubmitButton type="submit" value="Reset Password" />
         ) : (
-          <button>Loading...</button>
+          <BtnDisabled type="submit" value="Reset Password" disabled />
         )}
         <TextBottom>No account? <Link to="/signup" style={{ textDecoration: 'none', color: '#79CF98' }} >signup here</Link></TextBottom>
         <TextBottom>Log In? <Link to="/login" style={{ textDecoration: 'none', color: '#79CF98' }} >Log In here</Link></TextBottom>     

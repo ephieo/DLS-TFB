@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Form, Title, Input, Label, SubmitButton, Text, TextBottom } from '../styled-components/Form';
+import { Form, Title, Input, Label, SubmitButton, BtnDisabled, Text, TextBottom } from '../styled-components/Form';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -32,7 +32,7 @@ function Login() {
       <Form onSubmit={handleSubmit}>
         <Title>Login</Title>
         <Label htmlFor="email">Email:</Label>        
-        <Input type="email" id="email" name="email" ref={emailRef} />
+        <Input type="email" id="email" name="email" ref={emailRef} required />
         <Label htmlFor="password">Password:</Label>        
         <Input
           type="password"
@@ -46,9 +46,9 @@ function Login() {
           <Link to="/forgot-password" style={{ textDecoration: 'none', color: 'black' }} >Forgot Password?</Link>
         </Text>
         {!loading ? (
-          <SubmitButton type="submit" value="Log in" />
+          <SubmitButton type="submit" value="Log in"/>
         ) : (
-          <button>Loading...</button>
+          <BtnDisabled type="submit" value="Log in" disabled />
         )}
         <TextBottom>Don't have an account? <Link to="/signup" style={{ textDecoration: 'none', color: '#79CF98' }}>SignUp</Link></TextBottom>
       </Form>           

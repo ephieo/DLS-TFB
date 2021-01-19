@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Form, Title, Input, Label, SubmitButton, TextBottom } from '../styled-components/Form';
+import { Form, Title, Input, Label, SubmitButton, BtnDisabled, TextBottom } from '../styled-components/Form';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { signupDB } from './../database/queries'
@@ -62,9 +62,9 @@ function Signup() {
           required
         />
         {!loading ? (
-          <SubmitButton type="submit" />
+          <SubmitButton type="submit" value="Sign in" />
         ) : (
-          <button>Loading...</button>
+          <BtnDisabled type="submit" value="Sign in" disabled />
         )}
       <TextBottom> Already have an account ? <Link to="/login" style={{ textDecoration: 'none', color: '#79CF98' }} >LogIn</Link></TextBottom>
       </Form>

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Form, Input, Label, SubmitButton } from '../styled-components/Form';
+import { Form, Title, Input, Label, SubmitButton, BtnDisabled, TextBottom } from '../styled-components/Form';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -47,11 +47,10 @@ function AccountUpdate() {
 
   return (
     <div>
-      <h1>Update</h1>
       {error ? alert(error) : null}
       <Form onSubmit={handleSubmit}>
+        <Title>Update</Title>
         <Label htmlFor="email">Email:</Label>
-        <br />
         <Input
           type="email"
           id="email"
@@ -59,8 +58,7 @@ function AccountUpdate() {
           ref={emailRef}
           defaultValue={currentUser.email}
         />
-        <Label htmlFor="email">Password:</Label>
-        <br />
+        <Label htmlFor="password">Password:</Label>        
         <Input
           type="password"
           id="password"
@@ -69,6 +67,7 @@ function AccountUpdate() {
           minLength="7"
           placeholder="If keeping password leave this space blank"
         />
+        <Label htmlFor="confirmPassword">Password Confirmation:</Label> 
         <Input
           type="password"
           id="confirmPassword"
@@ -80,12 +79,10 @@ function AccountUpdate() {
         {!loading ? (
           <SubmitButton type="submit" value="Update" />
         ) : (
-          <button>Loading...</button>
+          <BtnDisabled type="submit" value="Update" disabled />
         )}
-      </Form>
-      <Link to="/account">
-        <button>Cancel</button>
-      </Link>
+        <TextBottom>Don't wnat to update? <Link to="/account" style={{ textDecoration: 'none', color: '#79CF98' }} >Go back to Account</Link></TextBottom>
+      </Form>      
     </div>
   );
 }

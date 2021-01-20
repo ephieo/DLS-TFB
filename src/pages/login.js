@@ -22,13 +22,12 @@ function Login() {
       await login(emailRef.current.value, passwordRef.current.value);
       history.push('/account');
     } catch {
-      setError('Failed to log in');
+      setError('Your email address or password was not correct.');
     }
     setLoading(false);
   }
   return (
     <div>
-      {error ? alert(error) : null}
       <Form onSubmit={handleSubmit}>
         <Title>Login</Title>
         <Label htmlFor="email">Email:</Label>        
@@ -45,6 +44,7 @@ function Login() {
         <Text>
           <Link to="/forgot-password" style={{ textDecoration: 'none', color: 'black' }} >Forgot Password?</Link>
         </Text>
+        {error ? <p>{error}</p> : null}
         {!loading ? (
           <SubmitButton type="submit" value="Log in"/>
         ) : (

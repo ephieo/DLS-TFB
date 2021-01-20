@@ -38,6 +38,7 @@ export const SubmitButton = styled.input`
   font-size: 1.3rem;
   margin: 1.5rem auto 0.5rem;
   box-shadow: 2px 2px 3px gray;
+  cursor: pointer;
 `;
 
 export const BtnDisabled = styled.input`

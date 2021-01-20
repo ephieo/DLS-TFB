@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+export const Logo = styled.img`  
+  width: 110px;
+  position: relative;
+  top: 17px;
+  left: 17px;
+`;
+
 export const MainImg = styled.img`
   display: block;
   max-width: 500px;
@@ -15,6 +22,7 @@ export const Button = styled.input`
   font-size: 1.3rem;  
   box-shadow: 2px 2px 3px gray;
   margin: 0 0.4rem;
+  cursor: pointer;
 `;
 
 export const BtnContainer = styled.div`

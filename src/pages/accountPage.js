@@ -3,14 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useAuth } from './../contexts/AuthContext';
 import { Link } from 'react-router-dom';
 import Footer from '../components/footer';
-import {
-  FlexHeader,
-  Button,
-  Logo,
-  MainCont,
-  CardCont,
-} from './../styled-components/reusables';
-import logo from './../images/logo.png';
+import { Button, MainCont, CardCont } from './../styled-components/reusables';
 
 function AccountPage() {
   const [error, setError] = useState('');
@@ -27,12 +20,6 @@ function AccountPage() {
   }
   return (
     <MainCont>
-      <FlexHeader>
-        <Link to="/account">
-          <Logo src={logo} alt="brand logo" />
-        </Link>
-        <Button onClick={handleLogout}>LOGOUT</Button>
-      </FlexHeader>
       <CardCont height="120vh" mrgtop="20vh">
         <CardCont>
           <h1>Account Page</h1>
@@ -41,7 +28,7 @@ function AccountPage() {
           <Link to="account-update">
             <button>Update Profile</button>
           </Link>
-          {/* <button onClick={handleLogout}>Log out</button> */}
+          <Button onClick={handleLogout}>LOGOUT</Button>
         </CardCont>
       </CardCont>
       <Footer />

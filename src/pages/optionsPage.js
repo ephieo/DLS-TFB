@@ -1,16 +1,12 @@
 import React from 'react';
 import Footer from './../components/footer';
 import {
-  FlexHeader,
-  Button,
-  Logo,
   Card,
   CardCont,
   MainCont,
   OptionsImg,
   ClearText,
 } from './../styled-components/reusables';
-import logo from './../images/logo.png';
 import { Link } from 'react-router-dom';
 import quiz from './../images/quiz.svg';
 import resources from './../images/resources.svg';
@@ -20,12 +16,6 @@ import aboutUs from './../images/about-us.svg';
 function OptionsPage() {
   return (
     <MainCont height="170vh">
-      <FlexHeader>
-        <Link to="/account">
-          <Logo src={logo} alt="brand logo" />
-        </Link>
-        <Button>Options Menu</Button>
-      </FlexHeader>
       <CardCont>
         <Link to="quiz-stage">
           <Card>

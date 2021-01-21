@@ -83,7 +83,7 @@ export const MainCont = styled.div`
   justify-content: ${(props) => props.justify || 'center'};
   align-items: center;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: ${(props) => props.flexdir || 'row'};
   height: ${(props) => props.height || ''};
   width: ${(props) => props.width || ''};
   margin: ${(props) => props.margin || ''};
@@ -178,3 +178,8 @@ export const Break = styled.div`
     margin: 3.5rem 0;
   }
 `;
+
+
+export const Video = styled.video`
+width:60vw;
+`

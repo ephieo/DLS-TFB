@@ -17,6 +17,8 @@ import {dataCall} from './../utils/dataHelpers';
 import loser from './../images/loser.png';
 import winner from './../images/winner.png';
 
+import VideoPage from './videosPage';
+
 export default function MultipleChoice() {
 
   const { currentUser } = useAuth();
@@ -29,6 +31,7 @@ export default function MultipleChoice() {
   const [win, setWin] = useState(true);
   const [stage, setStage] = useState('key-stage-3');
   const [timer,setTimer] = useState(false);
+  const [video,setVideo] = useState(false);
 
   
 const location = useLocation();
@@ -48,6 +51,7 @@ if(stage){
 const collectionArr = [];
    
 useEffect(() => {
+  
   const timer = setTimeout(() => {
     setTimer(true);
   }, 3000);
@@ -60,6 +64,8 @@ useEffect(() => {
 
   return (
     <div className="mc">
+      {video ? 
+      <>
       {data[question] ? (
         <>
           {!toggle ? (
@@ -104,8 +110,8 @@ useEffect(() => {
         ):null
       ) : (
        'null'
-      )}
-    </div>
+      )} </> : <VideoPage setVideo={setVideo} />}
+    </div> 
   );
 }
 

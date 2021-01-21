@@ -112,7 +112,7 @@ if(stage){
         </Link>
           </ResultCard>
         ) : !win && timer ?(          
-          <ResultCard imgSrc={loser} text={'Better luck next time!! '} ><Link to="/account">Account</Link></ResultCard> 
+          <ResultCard imgSrc={loser} text={'Better luck next time!! '} ><Link to="/account"><button>Account</button></Link></ResultCard> 
         ):null
       ) : (
         'null'

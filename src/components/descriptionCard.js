@@ -1,8 +1,13 @@
 import React from 'react';
+import correct from './../images/correct.svg';
+import incorrect from './../images/incorrect.svg';
 import {
-  QuizContainer,
-  ImgCont,
-  QuestionBtn,
+  QuizContainer,  
+  NextBtn,
+  DscCont,
+  ContentCont,
+  Heading,
+  Description
 } from './../styled-components/Cards';
 
 export default function DescriptionCard({
@@ -22,14 +27,19 @@ export default function DescriptionCard({
   }
   return (
     <div>
-      <QuizContainer background={background} height="40vh">
-        {answerObj.answer ? (
-          <ImgCont>Correct!</ImgCont>
-        ) : (
-          <ImgCont>Incorrect!</ImgCont>
-        )}
-        <ImgCont>{answerObj.description}</ImgCont>
-        <QuestionBtn onClick={nextQuestion}>Next</QuestionBtn>
+      <QuizContainer>
+        <DscCont style={{backgroundColor: background}}>
+          <ContentCont>{answerObj.answer ? (<img src={correct} alt="correct" />):(<img src={incorrect} alt="incorrect" />)}</ContentCont>
+          <ContentCont>
+            {answerObj.answer ? (
+              <Heading>Correct!</Heading>
+            ) : (
+              <Heading>Incorrect!</Heading>
+            )}
+            <Description>{answerObj.description}</Description>
+            <NextBtn onClick={nextQuestion}>Next</NextBtn>
+          </ContentCont>
+        </DscCont>
       </QuizContainer>
     </div>
   );

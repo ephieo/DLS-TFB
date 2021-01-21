@@ -1,12 +1,9 @@
 * {
   font-family: 'Nova Square', cursive;
-  background: white;
-  margin: 0;
-
 }
 
 .mc {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */  
 }

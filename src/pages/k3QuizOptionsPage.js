@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import MultipleChoice from './MultipleChoicePage';
 import FlashCardQuiz from './FlashCardPage';
+import { StageBtn } from './../styled-components/reusables';
 
 export default function QuizOptionPage() {
   const location = useLocation();
@@ -13,10 +14,10 @@ export default function QuizOptionPage() {
         !location.pathname.includes('flash-card') ? (
           <>
             <Link to="/k3/quiz-option/multiple-choice">
-              <button>Multiple Choice Quiz</button>
+              <StageBtn>Multiple Choice Quiz</StageBtn>
             </Link>
             <Link to="/k3/quiz-option/flash-card">
-              <button>Flash Cards Quiz </button>
+              <StageBtn>Flash Cards Quiz </StageBtn>
             </Link>{' '}
           </>
         ) : null}

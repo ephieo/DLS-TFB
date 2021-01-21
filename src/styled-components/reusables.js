@@ -91,3 +91,14 @@ export const OptionsImg = styled.img`
   margin-bottom: ${(props) => props.mrgbtm || '0'};
   background: transparent;
 `;
+
+export const StageBtn = styled.button`
+  display: block;
+  margin: 1rem auto;
+  padding: 1rem 1.5rem;
+  background-color: #ABC6FD;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 3px 5px gray;
+  width: 300px;
+`;

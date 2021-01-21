@@ -1,9 +1,10 @@
 import React from 'react';
 
-import {
-  ChoiceCont,
-  Img,
-  ImgCont
+import {  
+  QuizContainer,
+  ResultImg,
+  ResultCont,
+  ResultText
 } from './../styled-components/Cards';
 
 
@@ -12,12 +13,12 @@ export default function ResultCard({ imgSrc, text, children }) {
  
 
   return (
-    <ChoiceCont>
-      <Img src={imgSrc} />
-      <ImgCont background={'#08302e'}>
-        {text}
-        {children}        
-      </ImgCont>
-    </ChoiceCont>
+    <QuizContainer>
+      <ResultCont>        
+      <ResultImg src={imgSrc} />
+          <ResultText>{text}</ResultText>
+          {children}        
+      </ResultCont>
+    </QuizContainer>
   );
 }

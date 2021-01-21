@@ -14,10 +14,12 @@ import ResultCard from './../components/resultCard';
 
 import {dataCall} from './../utils/dataHelpers';
 
-import loser from './../images/loser.png';
-import winner from './../images/winner.png';
+import winner from './../images/winner2.svg';
+import noPoint from './../images/learning.svg';
 
 import VideoPage from './videosPage';
+
+import { AccountBtn } from './../styled-components/Cards'
 
 export default function MultipleChoice() {
 
@@ -95,18 +97,18 @@ useEffect(() => {
           <ResultCard imgSrc={winner} text={'Congrats!! '}>
 
           <Link to="/account">
-          <QuestionBtn
+          <AccountBtn
             onClick={() => {
               updateScore(currentUser.uid);
             }}
             background={'#08302e'}
           >
             Click Here to Save progress !
-          </QuestionBtn>
+          </AccountBtn>
         </Link>
           </ResultCard>
         ) : !win && timer ?(          
-          <ResultCard imgSrc={loser} text={'Better luck next time!! '} ><Link to="/account"><button>Account</button></Link></ResultCard> 
+          <ResultCard imgSrc={noPoint} text={'Better luck next time!! '} ><Link to="/account"><AccountBtn>Account</AccountBtn></Link></ResultCard> 
         ):null
       ) : (
        'null'

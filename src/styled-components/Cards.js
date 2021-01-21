@@ -35,8 +35,7 @@ export const ImgCont = styled.div`
 export const ChoiceCont = styled.div`
   /* border: 1px solid black;   */
   width: 25%;  
-  margin: 0 1rem;
-  /* border: 2px solid red; */
+  margin: 0 1rem;  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -112,6 +111,7 @@ export const Heading = styled.p`
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 2rem;
+  text-shadow: 0px 1px 2px gray;  
 `;
 
 export const NextBtn = styled.button`  
@@ -131,6 +131,51 @@ export const NextBtn = styled.button`
 export const Description = styled.p`  
   font-size: 1.3rem;  
 `;
+
+export const ResultImg = styled.img`  
+  display: block;
+  height: 70%;
+  @media screen and (max-width: 720px) {
+    width: 100%;
+    height: auto;
+  }
+`;
+
+export const ResultCont = styled.div`  
+  display: flex;
+  flex-direction: column; 
+  width: 60%;
+  height: 100%;
+  justify-content: start;
+  align-items: center;
+  @media screen and (max-width: 720px) {
+    width: 100%;
+  }
+`;
+
+export const AccountBtn = styled.button`  
+  padding: 1rem 3rem;
+  margin-top: 2rem;
+  background-color: #79CF98;
+  border: none;
+  box-shadow: 1px 3px 6px gray;
+  border-radius: 10px;  
+  font-size: 1rem;
+  &:hover {
+    opacity: 0.8;    
+  }
+`;
+
+export const ResultText = styled.p`  
+  font-size: 1.7rem;
+  @media screen and (max-width: 720px) {
+    font-size: 1.2rem;
+  }
+`;
+
+
+
+
 
 // export const QuizContainer = styled.div`
 //   color: #adebad;

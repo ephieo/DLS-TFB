@@ -2,8 +2,9 @@ import React from 'react';
 
 import {
     QuizContainer,
+    QuestionText,
     ImgCont,
-    QuestionCont,
+    ChoiceCont,
     QuestionBtn,
     Img,
   } from '../styled-components/Cards';
@@ -20,41 +21,38 @@ export default function MultipleChoiceCard({data, colour,question,setToggle,setC
 
     if (check[0].answer === false) {
       setToggle(true);
-      setColour('red');
+      setColour('#EAD2EF');
       setAnswer(check[0]);
       setWin(false);
     } else {
       setToggle(true);
-      setColour('green');
+      setColour('#79CF98');
       setAnswer(check[0]);
     }
   }
 
     return (
-        <div>
-             <QuizContainer>
-              <ImgCont>
-              <h1>{data[question].questionNum}</h1>
-                <ImgCont width="100%" height="10%">
-                  {data[question].question}
-                </ImgCont>
-                <Img src={data[question].image} alt="question img" />
-              </ImgCont>
-              <QuestionCont>
-                {data[question].options.map((e) => (
-                  <>
-                    <QuestionBtn
-                      onClick={correctAnswer}
-                      background={colour}
-                      key={data[question].options.text}
-                    >
-                      {e.text}
-                    </QuestionBtn>
-                    <br />
-                  </>
-                ))}
-              </QuestionCont>
-            </QuizContainer>
-        </div>
+      <div>
+        <QuizContainer>              
+          <ImgCont>
+            <QuestionText><p style={{ textAlign: "center"}}>{data[question].questionNum}. {data[question].question}</p></QuestionText>
+          <Img src={data[question].image} alt="question img" />
+          </ImgCont>              
+        <ChoiceCont>
+          {data[question].options.map((e) => (
+            <>
+              <QuestionBtn
+                onClick={correctAnswer}
+                background={colour}
+                key={data[question].options.text}
+              >
+                {e.text}
+              </QuestionBtn>                    
+            </>
+          ))}
+        </ChoiceCont>
+      </QuizContainer>      
+
+      </div>  
     )
 }

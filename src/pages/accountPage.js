@@ -1,23 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useAuth } from './../contexts/AuthContext';
+import {collectionCall} from './../utils/dataHelpers';
+import { db } from './../database/firebase';
 import { Link } from 'react-router-dom';
 import Footer from '../components/footer';
 import {
   Button,
   MainCont,
-  CardCont,
-  Card,
+
   AccCard,
   Img,
 } from './../styled-components/reusables';
+
 import accountImg from './../images/account-img.svg';
 import AccountBox from './../components/accountBox';
 
+
 function AccountPage() {
+
+
   const [error, setError] = useState('');
   const { currentUser, logout } = useAuth();
   const history = useHistory();
+
+  const [data,setData] = useState();
+
+  const collectionArr = [];
+  const docRef = db
+    .collection('users')
+    .doc(`${currentUser.uid}`)
+
+  console.log(currentUser.uid)  
+   
+  useEffect(()=>collectionCall(docRef,collectionArr,setData),[])
+
+  console.log(data)
 
   async function handleLogout() {
     setError('');
@@ -37,11 +55,11 @@ function AccountPage() {
         />
         <AccCard padding="1rem" border="#b0c5f8 solid 3px">
           <AccountBox
-            nameInput="name"
+            nameInput={data ? data[0].userName : ''}
             emailInput={
               currentUser ? currentUser.email : <p>No user signed in:</p>
             }
-            scoreInput="300"
+            scoreInput={data? data[0].score : ''}
           ></AccountBox>
           {error ? alert(error) : null}
           <Link to="account-update">

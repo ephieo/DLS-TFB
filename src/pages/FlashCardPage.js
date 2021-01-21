@@ -11,6 +11,8 @@ import {
 import { Link, useLocation } from 'react-router-dom';
 import { updateScore } from './../database/queries';
 
+import {dataCall} from './../utils/dataHelpers';
+
 import DescriptionCard from './../components/descriptionCard';
 import ResultCard from './../components/resultCard';
 
@@ -53,22 +55,13 @@ if(stage){
     const timer = setTimeout(() => {
       setTimer(true);
     }, 3000);
-
-    if(stage) {
-      docRef
-      .get()
-      .then((result) => {
-        return result.docs.forEach((doc) => {
-          collectionArr.push(doc.data());
-        });
-      })
-      .then(() => {
-        console.log('array', collectionArr);
-        return setData(collectionArr);
-      })
-      .catch((error) => console.log(error));}
+    if(stage) {dataCall(docRef,collectionArr,setData)}
       return () => clearTimeout(timer);
     }, []);
+
+
+
+
   return (
     <div>
       {data[question] ? 

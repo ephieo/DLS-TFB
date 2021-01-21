@@ -15,21 +15,4 @@ export default function QuizPage() {
   );
 }
 
-//quizPge
-//k3:quiz-option
-//k3:multiple choice
-//k3:flash-card
 
-//{multiple-choice} = useParams();
-// {data ? (
-//     <>
-//       <h1>{data.question}</h1>
-//       <img src={data.image} alt="question img" />
-//       {Object.keys(data.options[0]).map((e) => (
-//         <>
-//           <button>{e}</button>
-//           <br />
-//         </>
-//       ))}
-//     </>
-//   ) : null}

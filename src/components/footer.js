@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 
 import { FlexFooter, ClearText } from '../styled-components/reusables';
 
-export default function Footer({ onClickFunc }) {
+export default function Footer() {
   return (
     <FlexFooter>
       <Link to="about">
-        <ClearText color="#495963">ABOUT</ClearText>
+        <ClearText color="white">ABOUT</ClearText>
       </Link>
       <Link to="options">
-        <ClearText color="#495963">OPTIONS</ClearText>
+        <ClearText color="white">OPTIONS</ClearText>
       </Link>
       <Link to="account">
-        <ClearText color="#495963">ACCOUNT</ClearText>
+        <ClearText color="white">ACCOUNT</ClearText>
       </Link>
     </FlexFooter>
   );

@@ -15,12 +15,16 @@ import logo from './images/logo.png';
 import { Logo } from './styled-components/Landig';
 // import MultipleChoice from './pages/MultipleChoicePage';
 import OptionsPage from './pages/optionsPage';
+import AboutUs from './pages/aboutPage';
+import Footer from './components/footer';
 
 function App() {
-  return (    
+  return (
     <Router>
       <AuthProvider>
-        <Link to="/"><Logo src={logo} alt="logo" /></Link>
+        <Link to="/">
+          <Logo src={logo} alt="logo" />
+        </Link>
         <Switch>
           <PublicRoute exact path="/" component={LandingPage} />
           <PublicRoute path="/login" component={Login} />
@@ -30,14 +34,16 @@ function App() {
           <PrivateRoute path="/account-update" component={AccountUpdate} />
           <PrivateRoute path="/quiz-stage" component={QuizStagePage} />
           <PrivateRoute path="/:stage/quiz-option" component={QuizOptionPage} />
+          <PrivateRoute path="/about" component={AboutUs} />
           <PrivateRoute path="/options" component={OptionsPage} />
           <PrivateRoute
             path="/:stage/quiz-option/:title"
             // component={MultipleChoice}
           />
         </Switch>
+        <Footer />
       </AuthProvider>
-    </Router>    
+    </Router>
   );
 }
 

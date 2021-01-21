@@ -12,6 +12,8 @@ import MultipleChoiceCard from './../components/multipleChoice';
 import DescriptionCard from './../components/descriptionCard';
 import ResultCard from './../components/resultCard';
 
+import {dataCall} from './../utils/dataHelpers';
+
 import loser from './../images/loser.png';
 import winner from './../images/winner.png';
 
@@ -43,31 +45,17 @@ if(stage){
     .doc(stage)
     .collection('multiple-choice');
 }
+const collectionArr = [];
    
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setTimer(true);
+  }, 3000);
 
-  const collectionArr = [];
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setTimer(true);
-    }, 3000);
-
-    if(stage) {
-      docRef
-      .get()
-      .then((result) => {
-        return result.docs.forEach((doc) => {
-          collectionArr.push(doc.data());
-        });
-      })
-      .then(() => {
-        console.log('array', collectionArr);
-        return setData(collectionArr);
-      })
-      .catch((error) => console.log(error));}
-      return () => clearTimeout(timer);
-    }, []);
+  if(stage){return dataCall(docRef,collectionArr,setData)}
     
+    return () => clearTimeout(timer);
+  }, []);    
 
 
   return (
@@ -115,7 +103,7 @@ if(stage){
           <ResultCard imgSrc={loser} text={'Better luck next time!! '} ><Link to="/account"><button>Account</button></Link></ResultCard> 
         ):null
       ) : (
-        'null'
+       'null'
       )}
     </div>
   );

@@ -6,13 +6,13 @@ import { FlexFooter, ClearText } from '../styled-components/reusables';
 export default function Footer() {
   return (
     <FlexFooter>
-      <Link to="about">
+      <Link to="/about">
         <ClearText color="white">ABOUT</ClearText>
       </Link>
-      <Link to="options">
+      <Link to="/options">
         <ClearText color="white">OPTIONS</ClearText>
       </Link>
-      <Link to="account">
+      <Link to="/account">
         <ClearText color="white">ACCOUNT</ClearText>
       </Link>
     </FlexFooter>

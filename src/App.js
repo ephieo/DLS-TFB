@@ -10,7 +10,8 @@ import PublicRoute from './utils/PublicRoute';
 import ForgotPassword from './pages/forgotPassword';
 import AccountUpdate from './pages/accountUpdate';
 import QuizStagePage from './pages/quizzesStagePage';
-import QuizOptionPage from './pages/k3QuizOptionsPage';
+import K3QuizOptionPage from './pages/k3QuizOptionsPage';
+import K4QuizOptionPage from './pages/k4QuizOptionsPage';
 import logo from './images/logo.png';
 import { Logo } from './styled-components/Landig';
 // import MultipleChoice from './pages/MultipleChoicePage';
@@ -33,7 +34,8 @@ function App() {
           <PrivateRoute path="/account" component={AccountPage} />
           <PrivateRoute path="/account-update" component={AccountUpdate} />
           <PrivateRoute path="/quiz-stage" component={QuizStagePage} />
-          <PrivateRoute path="/:stage/quiz-option" component={QuizOptionPage} />
+          <PrivateRoute path="/k3/quiz-option" component={K3QuizOptionPage} />
+          <PrivateRoute path="/k4/quiz-option" component={K4QuizOptionPage} />
           <PrivateRoute path="/about" component={AboutUs} />
           <PrivateRoute path="/options" component={OptionsPage} />
           <PrivateRoute

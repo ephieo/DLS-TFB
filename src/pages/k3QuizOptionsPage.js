@@ -4,9 +4,9 @@ import MultipleChoice from './MultipleChoicePage';
 import FlashCardQuiz from './FlashCardPage';
 import { StageBtn } from './../styled-components/reusables';
 
-export default function QuizOptionPage() {
+export default function K3QuizOptionPage() {
   const location = useLocation();
-  const [toggle, setToggle] = useState(false);
+  // const [toggle, setToggle] = useState(false);
   return (
     <div>
       <>

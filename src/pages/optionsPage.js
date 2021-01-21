@@ -17,13 +17,13 @@ function OptionsPage() {
   return (
     <MainCont height="80vh" margin="1rem">
       <CardCont>
-        <Link to="quiz-stage">
+        <Link to="/quiz-stage">
           <Card>
             <OptionsImg src={quiz} alt="icon for  the link to thequiz page" />
             <ClearText color="#b0c5f8">QUIZZES</ClearText>
           </Card>
         </Link>
-        <Link to="resources">
+        <Link to="/resources">
           <Card>
             <OptionsImg
               src={resources}
@@ -32,7 +32,7 @@ function OptionsPage() {
             <ClearText color="#b0c5f8">RESOURCES</ClearText>
           </Card>
         </Link>
-        <Link to="about">
+        <Link to="/about">
           <Card>
             <OptionsImg
               src={aboutUs}
@@ -43,7 +43,7 @@ function OptionsPage() {
             <ClearText color="#b0c5f8">ABOUT US</ClearText>
           </Card>
         </Link>
-        <Link to="account">
+        <Link to="/account">
           <Card>
             <OptionsImg src={profile} alt="icon for  the link to theaccount" />
             <ClearText color="#b0c5f8">ACCOUNT</ClearText>

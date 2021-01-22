@@ -82,12 +82,15 @@ export const CardCont = styled.div`
 export const MainCont = styled.div`
   display: flex;
   justify-content: ${(props) => props.justify || 'center'};
-  align-items: center;
+  align-items: ${(props) => props.align || 'center'};
   flex-wrap: wrap;
   flex-direction: ${(props) => props.flexdir || 'row'};
+  background: ${(props) => props.background || ''};
   height: ${(props) => props.height || ''};
   width: ${(props) => props.width || ''};
   margin: ${(props) => props.margin || ''};
+  border: ${(props) => props.border || ''};
+  border-radius: ${(props) => props.bdrradius || '0'};
   /* border: red solid 3px; */
 
   @media (max-width: 400px) {
@@ -105,16 +108,29 @@ export const OptionsImg = styled.img`
 `;
 
 export const StageBtn = styled.button`
-  display: block;
-  margin: 1rem auto;
+  display: flex;
+  justify-content: ${(props) => props.justify || 'center'};
+  align-items: ${(props) => props.align || 'center'};
+  margin: 1rem;
   padding: 1rem 1.5rem;
-  background-color: #ABC6FD;
+  font-size: 1.5rem;
+  background: ${(props) => props.background || ''};
+  font-weight: 800;
+  border-radius: 20%;
   border: none;
-  border-radius: 10px;
-  box-shadow: 1px 3px 5px gray;
-  width: 300px;
+  cursor: pointer;
+  box-shadow: ${(props) =>
+    props.boxShad || '5px -5px #325138, -2px 2px #325138, -1px 1px #325138'};
+  width: 15vw;
+  height: 25vh;
+  color: ${(props) => props.color || ''};
+
+  :hover {
+    box-shadow: ${(props) =>
+      props.mobBoxShad || '3px -3px #325138, -1px 1px #325138, 0 0 #325138'};
+  }
 `;
-  
+
 export const Img = styled.img`
   width: ${(props) => props.width || '20vw'};
 
@@ -180,8 +196,8 @@ export const Break = styled.div`
   }
 `;
 
-
 export const Video = styled.video`
+
   width:60vw;
   @media (max-width: 720px) {
       width: 85vw;
@@ -196,3 +212,4 @@ export const Icon = styled.img`
     width: 30px;
   }
 `;
+

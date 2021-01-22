@@ -6,8 +6,6 @@ import Footer from '../components/footer';
 import {
   Button,
   MainCont,
-  CardCont,
-  Card,
   AccCard,
   Img,
 } from './../styled-components/reusables';

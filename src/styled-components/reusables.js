@@ -83,7 +83,7 @@ export const MainCont = styled.div`
   justify-content: ${(props) => props.justify || 'center'};
   align-items: center;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: ${(props) => props.flexdir || 'row'};
   height: ${(props) => props.height || ''};
   width: ${(props) => props.width || ''};
   margin: ${(props) => props.margin || ''};
@@ -103,6 +103,17 @@ export const OptionsImg = styled.img`
   background: transparent;
 `;
 
+export const StageBtn = styled.button`
+  display: block;
+  margin: 1rem auto;
+  padding: 1rem 1.5rem;
+  background-color: #ABC6FD;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 3px 5px gray;
+  width: 300px;
+`;
+  
 export const Img = styled.img`
   width: ${(props) => props.width || '20vw'};
 
@@ -167,3 +178,8 @@ export const Break = styled.div`
     margin: 3.5rem 0;
   }
 `;
+
+
+export const Video = styled.video`
+width:60vw;
+`

@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 export const QuizContainer = styled.div`
   height: 80vh;
-  padding: 0 1.5rem;  
+  padding: 0 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+
   /* border: 1px solid black; */
 
   @media screen and (max-width: 720px) {
@@ -13,28 +14,26 @@ export const QuizContainer = styled.div`
     height: auto;
     margin-top: 1rem;
   }
-
 `;
 
-export const ImgCont = styled.div`  
-  width: 35%;
+export const ImgCont = styled.div`
+  width: 35vw;
   margin: 0 1rem;
-  background-color: #ABC6FD;
+  background: #2b2a2a;
   padding: 1rem 0 2rem;
-  border-radius: 7px;
-  box-shadow: 1px 3px 6px gray;
-  border: 7px solid #6586CA;
+  border-radius: 30px;
+  color: #70bf81;
   @media screen and (max-width: 720px) {
     width: 100%;
     margin: 0 1rem 0.5rem;
     padding: 0.3rem 0 0.7rem;
-    border: 5px solid #6586CA;
+    border: 5px solid #6586ca;
   }
 `;
 
 export const ChoiceCont = styled.div`
   /* border: 1px solid black;   */
-  width: 25%;  
+  width: 25%;
   margin: 0 1rem;
   /* border: 2px solid red; */
   display: flex;
@@ -46,19 +45,19 @@ export const ChoiceCont = styled.div`
 `;
 
 export const QuestionBtn = styled.button`
-  border: 5px solid #6586CA;
+  border: 5px solid #2b2a2a;
   display: block;
   width: 100%;
   height: auto;
   margin: 0.7rem auto;
-  background-color: #ABC6FD;
+  background-color: #abc6fd;
   padding: 1.2rem;
   border-radius: 7px;
-  box-shadow: 1px 3px 6px gray;
+  /* box-shadow: 1px 3px 6px gray; */
   font-size: 1.2rem;
   cursor: pointer;
   &:hover {
-    opacity: 0.7;    
+    opacity: 0.7;
   }
   @media screen and (max-width: 720px) {
     margin: 0.4rem auto;
@@ -67,7 +66,7 @@ export const QuestionBtn = styled.button`
   }
 `;
 
-export const Img = styled.img`  
+export const Img = styled.img`
   display: block;
   width: 60%;
   margin: 1rem auto;
@@ -76,45 +75,44 @@ export const Img = styled.img`
   background-color: white;
 `;
 
-export const QuestionText = styled.div`  
+export const QuestionText = styled.div`
   width: 90%;
   margin: 1.5rem auto;
-  font-size: 1.5rem;  
+  font-size: 1.5rem;
   @media screen and (max-width: 720px) {
     font-size: 1rem;
   }
 `;
 
-export const DscCont = styled.div`  
+export const DscCont = styled.div`
   /* border: 7px solid #3F9885;   */
   width: 65%;
-  height: 75%; 
+  height: 75%;
   display: flex;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
   border-radius: 9px;
   box-shadow: 1px 3px 6px gray;
   @media screen and (max-width: 720px) {
     flex-direction: column;
     width: 95%;
     height: auto;
-    padding: 1.7rem 0; 
+    padding: 1.7rem 0;
   }
-  
 `;
 
-export const ContentCont = styled.div`  
+export const ContentCont = styled.div`
   width: 70%;
-  margin: 0 1.5rem; 
+  margin: 0 1.5rem;
 `;
 
-export const Heading = styled.p`  
+export const Heading = styled.p`
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 2rem;
 `;
 
-export const NextBtn = styled.button`  
+export const NextBtn = styled.button`
   width: 100%;
   margin-top: 2rem;
   padding: 1rem;
@@ -124,12 +122,12 @@ export const NextBtn = styled.button`
   cursor: pointer;
   font-size: 1.5rem;
   &:hover {
-    opacity: 0.8;    
+    opacity: 0.8;
   }
 `;
 
-export const Description = styled.p`  
-  font-size: 1.3rem;  
+export const Description = styled.p`
+  font-size: 1.3rem;
 `;
 
 // export const QuizContainer = styled.div`
@@ -145,7 +143,6 @@ export const Description = styled.p`
 //   background: ${(props) => props.background || '#08302e'};
 //   box-shadow: 7px 7px 5px grey;
 // `;
-
 
 // export const ImgCont = styled.div`
 //   display: flex;

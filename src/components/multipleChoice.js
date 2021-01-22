@@ -1,19 +1,26 @@
 import React from 'react';
 
 import {
-    QuizContainer,
-    QuestionText,
-    ImgCont,
-    ChoiceCont,
-    QuestionBtn,
-    Img,
-  } from '../styled-components/Cards';
+  QuizContainer,
+  QuestionText,
+  ImgCont,
+  ChoiceCont,
+  QuestionBtn,
+  Img,
+} from '../styled-components/Cards';
 
+import { MainCont } from './../styled-components/reusables';
 
-
-export default function MultipleChoiceCard({data, colour,question,setToggle,setColour,setAnswer, setWin}) {
-
-   function correctAnswer(event) {
+export default function MultipleChoiceCard({
+  data,
+  colour,
+  question,
+  setToggle,
+  setColour,
+  setAnswer,
+  setWin,
+}) {
+  function correctAnswer(event) {
     const check = data[question].options.filter(
       (e) => e.text === event.target.textContent
     );
@@ -31,28 +38,39 @@ export default function MultipleChoiceCard({data, colour,question,setToggle,setC
     }
   }
 
-    return (
-      <div>
-        <QuizContainer>              
+  return (
+    <div>
+      <QuizContainer>
+        <MainCont
+          width="60vw"
+          justify="space-between"
+          background="#2b2a2a"
+          border="#2b2a2a"
+          bddradius="20px"
+        >
           <ImgCont>
-            <QuestionText><p style={{ textAlign: "center"}}>{data[question].questionNum}. {data[question].question}</p></QuestionText>
-          <Img src={data[question].image} alt="question img" />
-          </ImgCont>              
-        <ChoiceCont>
-          {data[question].options.map((e) => (
-            <>
-              <QuestionBtn
-                onClick={correctAnswer}
-                background={colour}
-                key={data[question].options.text}
-              >
-                {e.text}
-              </QuestionBtn>                    
-            </>
-          ))}
-        </ChoiceCont>
-      </QuizContainer>      
-
-      </div>  
-    )
+            <QuestionText>
+              <p style={{ textAlign: 'center' }}>
+                {data[question].questionNum}. {data[question].question}
+              </p>
+            </QuestionText>
+            <Img src={data[question].image} alt="question img" />
+          </ImgCont>
+          <ChoiceCont>
+            {data[question].options.map((e) => (
+              <>
+                <QuestionBtn
+                  onClick={correctAnswer}
+                  background={colour}
+                  key={data[question].options.text}
+                >
+                  {e.text}
+                </QuestionBtn>
+              </>
+            ))}
+          </ChoiceCont>
+        </MainCont>
+      </QuizContainer>
+    </div>
+  );
 }

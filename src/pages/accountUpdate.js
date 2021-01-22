@@ -47,7 +47,6 @@ function AccountUpdate() {
 
   return (
     <div>
-      {error ? alert(error) : null}
       <Form onSubmit={handleSubmit}>
         <Title>Update</Title>
         <Label htmlFor="email">Email:</Label>
@@ -76,6 +75,7 @@ function AccountUpdate() {
           minLength="7"
           placeholder="If keeping password leave this space blank"
         />
+        {error ? <p>{error}</p> : null}
         {!loading ? (
           <SubmitButton type="submit" value="Update" />
         ) : (

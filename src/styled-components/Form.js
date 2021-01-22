@@ -10,6 +10,10 @@ export const Form = styled.form`
 export const Title = styled.h1`
    margin-bottom: 3rem;
    font-size: 2rem;
+   @media screen and (max-width: 720px) {
+    margin-bottom: 1.2rem;
+    font-size: 1.5rem;
+  }
 `;
 
 export const Input = styled.input`
@@ -20,7 +24,10 @@ export const Input = styled.input`
   margin-bottom: 1rem;
   padding: 0.5rem 0 0.3rem 0;
   font-size: 1.2rem;
-  
+  @media screen and (max-width: 720px) {
+    margin-bottom: 0.7rem;
+    font-size: 1rem;
+  }
 `;
 
 export const Label = styled.label`
@@ -40,6 +47,10 @@ export const SubmitButton = styled.input`
   margin: 1.5rem auto 0.5rem;
   box-shadow: 2px 2px 3px gray;
   cursor: pointer;
+  @media screen and (max-width: 720px) {
+    margin: 1rem auto 0.5rem;
+    font-size: 1rem;
+  }
 `;
 
 export const BtnDisabled = styled.input`

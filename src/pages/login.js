@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { LandingCont } from './../styled-components/Landig'; 
 import { Form, Title, Input, Label, SubmitButton, BtnDisabled, Text, TextBottom } from '../styled-components/Form';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
@@ -22,7 +23,7 @@ function Login() {
       await login(emailRef.current.value, passwordRef.current.value);
       history.push('/account');
     } catch {
-      setError('Your email address or password was not correct.');
+      setError('Your email address or password is not correct.');
     }
     setLoading(false);
   }

@@ -30,6 +30,7 @@ function ForgotPassword() {
         <Title>Password Reset</Title>
         <Label htmlFor="email">Email:</Label>        
         <Input type="email" id="email" name="email" ref={emailRef} required/>
+        {error ? <p>{error}</p> : null}
         {!loading ? (
           <SubmitButton type="submit" value="Reset Password" />
         ) : (
@@ -39,7 +40,6 @@ function ForgotPassword() {
         <TextBottom>Log In? <Link to="/login" style={{ textDecoration: 'none', color: '#79CF98' }} >Log In here</Link></TextBottom>     
         
       </Form>
-      {error ? alert(error) : null}
       {message ? alert(message) : null}
 
     </div>

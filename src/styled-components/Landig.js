@@ -9,7 +9,7 @@ export const Logo = styled.img`
 
 export const MainImg = styled.img`
   display: block;
-  max-width: 500px;
+  max-width: 700px;
   margin: 0 auto;
 `;
 
@@ -23,6 +23,9 @@ export const Button = styled.input`
   box-shadow: 2px 2px 3px gray;
   margin: 0 0.4rem;
   cursor: pointer;
+  @media screen and (max-width: 720px) {
+    font-size: 0.9rem; 
+  }
 `;
 
 export const BtnContainer = styled.div`
@@ -30,4 +33,15 @@ export const BtnContainer = styled.div`
   max-width: 500px;
   display: flex;
   justify-content: center;
+`;
+
+export const LandingCont = styled.div`
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: 1px solid black; */
+  /* background: linear-gradient(to bottom, #EBF2EA 60%, #191F37 40%); */
+  /* background: linear-gradient(to bottom, white 60%, #191F37 40%); */
 `;

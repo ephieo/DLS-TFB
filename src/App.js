@@ -17,7 +17,7 @@ import { Logo } from './styled-components/Landig';
 // import MultipleChoice from './pages/MultipleChoicePage';
 import OptionsPage from './pages/optionsPage';
 import AboutUs from './pages/aboutPage';
-import Footer from './components/footer';
+// import Footer from './components/footer';
 import VideoPage from './pages/videosPage';
 
 function App() {
@@ -45,7 +45,7 @@ function App() {
             // component={MultipleChoice}
           />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </AuthProvider>
     </Router>
   );

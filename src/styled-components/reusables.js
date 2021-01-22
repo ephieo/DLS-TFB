@@ -28,9 +28,9 @@ export const Logo = styled.img`
 export const ClearText = styled.p`
   background: transparent;
   color: ${(props) => props.color || 'black'};
-  font-size: 27px;
+  font-size: 24px;
   @media (max-width: 400px) {
-    font-size: 18px;
+    font-size: 15px;
   }
 `;
 
@@ -43,7 +43,8 @@ export const FlexFooter = styled.div`
   width: 100%;
   position: fixed;
   bottom: 0;
-  height: 10vh;
+  /* height: 10vh; */
+  height: auto;
   /* opacity: 0.9; */
 `;
 
@@ -196,5 +197,19 @@ export const Break = styled.div`
 `;
 
 export const Video = styled.video`
-  width: 60vw;
+
+  width:60vw;
+  @media (max-width: 720px) {
+      width: 85vw;
+    }
 `;
+
+export const Icon = styled.img`
+  display: block;
+  width: 40px;  
+  margin: 2px auto;
+  @media (max-width: 400px) {
+    width: 30px;
+  }
+`;
+

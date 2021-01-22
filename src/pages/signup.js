@@ -36,7 +36,6 @@ function Signup() {
 
   return (
     <div>
-      {error ? alert(error) : null}
       <Form onSubmit={handleSubmit}>
         <Title>Sign up</Title>
         <Label htmlFor="userName">Name:</Label>        
@@ -61,6 +60,7 @@ function Signup() {
           minLength="7"
           required
         />
+        {error ? <p>{error}</p>: null}
         {!loading ? (
           <SubmitButton type="submit" value="Sign in" />
         ) : (

@@ -37,8 +37,11 @@ export const BtnContainer = styled.div`
 
 export const LandingCont = styled.div`
   width: 100%;
-  height: 80vh;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* border: 1px solid black; */
+  /* background: linear-gradient(to bottom, #EBF2EA 60%, #191F37 40%); */
+  /* background: linear-gradient(to bottom, white 60%, #191F37 40%); */
 `;

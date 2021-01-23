@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { LandingCont } from './../styled-components/Landig'; 
-import { Form, Title, Input, Label, SubmitButton, BtnDisabled, Text, TextBottom } from '../styled-components/Form';
+import { FormCont, Form, Title, Input, Label, SubmitButton, BtnDisabled, Text, TextBottom } from '../styled-components/Form';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -28,7 +27,7 @@ function Login() {
     setLoading(false);
   }
   return (
-    <div>
+    <FormCont>
       <Form onSubmit={handleSubmit}>
         <Title>Login</Title>
         <Label htmlFor="email">Email:</Label>        
@@ -53,7 +52,7 @@ function Login() {
         )}
         <TextBottom>Don't have an account? <Link to="/signup" style={{ textDecoration: 'none', color: '#79CF98' }}>SignUp</Link></TextBottom>
       </Form>           
-    </div>
+    </FormCont>
   );
 }
 

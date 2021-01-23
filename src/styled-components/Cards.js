@@ -131,27 +131,6 @@ export const Description = styled.p`
   font-size: 1.3rem;
 `;
 
-export const ResultImg = styled.img`  
-  display: block;
-  height: 70%;
-  @media screen and (max-width: 720px) {
-    width: 100%;
-    height: auto;
-  }
-`;
-
-export const ResultCont = styled.div`  
-  display: flex;
-  flex-direction: column; 
-  width: 60%;
-  height: 100%;
-  justify-content: start;
-  align-items: center;
-  @media screen and (max-width: 720px) {
-    width: 100%;
-  }
-`;
-
 export const AccountBtn = styled.button`  
   padding: 1rem 3rem;
   margin-top: 2rem;
@@ -165,12 +144,7 @@ export const AccountBtn = styled.button`
   }
 `;
 
-export const ResultText = styled.p`  
-  font-size: 1.7rem;
-  @media screen and (max-width: 720px) {
-    font-size: 1.2rem;
-  }
-`;
+
 
 
 

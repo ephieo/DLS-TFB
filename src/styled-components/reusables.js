@@ -34,20 +34,6 @@ export const ClearText = styled.p`
   }
 `;
 
-export const FlexFooter = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: row;
-  background: #70bf81;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  /* height: 10vh; */
-  height: auto;
-  /* opacity: 0.9; */
-`;
-
 export const Card = styled.div`
   display: flex;
   justify-content: space-evenly;
@@ -204,12 +190,4 @@ export const Video = styled.video`
     }
 `;
 
-export const Icon = styled.img`
-  display: block;
-  width: 40px;  
-  margin: 2px auto;
-  @media (max-width: 400px) {
-    width: 30px;
-  }
-`;
 

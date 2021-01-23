@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Form, Title, Input, Label, SubmitButton, BtnDisabled, TextBottom } from '../styled-components/Form';
+import { FormCont, Form, Title, Input, Label, SubmitButton, BtnDisabled, TextBottom } from '../styled-components/Form';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -25,7 +25,7 @@ function ForgotPassword() {
     setLoading(false);
   }
   return (
-    <div>
+    <FormCont>
       <Form onSubmit={handleSubmit}>
         <Title>Password Reset</Title>
         <Label htmlFor="email">Email:</Label>        
@@ -41,8 +41,7 @@ function ForgotPassword() {
         
       </Form>
       {message ? alert(message) : null}
-
-    </div>
+    </FormCont>
   );
 }
 

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Form, Title, Input, Label, SubmitButton, BtnDisabled, TextBottom } from '../styled-components/Form';
+import { FormCont, Form, Title, Input, Label, SubmitButton, BtnDisabled, TextBottom } from '../styled-components/Form';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -46,7 +46,7 @@ function AccountUpdate() {
   }
 
   return (
-    <div>
+    <FormCont>
       <Form onSubmit={handleSubmit}>
         <Title>Update</Title>
         <Label htmlFor="email">Email:</Label>
@@ -83,7 +83,7 @@ function AccountUpdate() {
         )}
         <TextBottom>Don't wnat to update? <Link to="/account" style={{ textDecoration: 'none', color: '#79CF98' }} >Go back to Account</Link></TextBottom>
       </Form>      
-    </div>
+    </FormCont>
   );
 }
 

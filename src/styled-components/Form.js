@@ -1,10 +1,18 @@
 import styled from 'styled-components';
 
-export const Form = styled.form`
-  border: 0px solid black;
-  max-width: 500px;
-  margin: 1rem auto;  
-  padding: 2rem 3rem;
+export const FormCont = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  padding: 3rem;
+`;
+
+export const Form = styled.form`  
+  width: 500px;
+  padding-bottom: 10%; 
 `;
 
 export const Title = styled.h1`

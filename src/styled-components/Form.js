@@ -6,7 +6,7 @@ export const FormCont = styled.div`
   display: flex;  
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 3rem;
 `;
 

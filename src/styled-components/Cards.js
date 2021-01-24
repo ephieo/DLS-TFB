@@ -5,9 +5,7 @@ export const QuizContainer = styled.div`
   padding: 0 1.5rem;
   display: flex;
   justify-content: center;
-  align-items: center;
-
-  /* border: 1px solid black; */
+  align-items: center; 
 
   @media screen and (max-width: 720px) {
     flex-direction: column;
@@ -31,11 +29,9 @@ export const ImgCont = styled.div`
   }
 `;
 
-export const ChoiceCont = styled.div`
-  /* border: 1px solid black;   */
+export const ChoiceCont = styled.div`  
   width: 25%;
-  margin: 0 1rem;
-  /* border: 2px solid red; */
+  margin: 0 1rem;  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -52,8 +48,7 @@ export const QuestionBtn = styled.button`
   margin: 0.7rem auto;
   background-color: #abc6fd;
   padding: 1.2rem;
-  border-radius: 7px;
-  /* box-shadow: 1px 3px 6px gray; */
+  border-radius: 7px;  
   font-size: 1.2rem;
   cursor: pointer;
   &:hover {
@@ -84,8 +79,7 @@ export const QuestionText = styled.div`
   }
 `;
 
-export const DscCont = styled.div`
-  /* border: 7px solid #3F9885;   */
+export const DscCont = styled.div`  
   width: 65%;
   height: 75%;
   display: flex;

@@ -4,8 +4,12 @@ export const Logo = styled.img`
   width: 120px;
   position: fixed;
   top: 17px;
-  left: 17px;
+  left: 32px;
   z-index: 20;
+  @media screen and (max-width: 720px) {
+    width: 100px;
+    left: 17px;
+  }
 `;
 
 export const MainImg = styled.img`
@@ -44,11 +48,11 @@ export const LandingCont = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: start;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   
   @media screen and (max-width: 720px) {
     justify-content: center;
   }
   /* background: linear-gradient(to bottom, #EBF2EA 50%, #191F37 50%); */
-  /* background: linear-gradient(to bottom, white 53%, #191F37 47%); */
+  background: linear-gradient(to bottom, white 53%, #191F37 47%);
 `;

@@ -15,7 +15,7 @@ import aboutUs from './../images/about-us.svg';
 
 function OptionsPage() {
   return (
-    <MainCont height="80vh" margin="1rem">
+    <MainCont height="80vh" margin="1rem" style={{ paddingTop: " 5rem"}}>
       <CardCont>
         <Link to="/quiz-stage">
           <Card>

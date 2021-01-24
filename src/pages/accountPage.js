@@ -41,7 +41,7 @@ function AccountPage() {
   }
   return (
     <MainCont width="100vw">
-      <MainCont margin=" 4rem 0">
+      <MainCont margin=" 7rem 0 4rem">
         <Img
           src={accountImg}
           alt="illustration of a community of people"

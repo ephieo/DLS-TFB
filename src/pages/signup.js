@@ -1,8 +1,16 @@
 import React, { useRef, useState } from 'react';
-import { Form, Title, Input, Label, SubmitButton, BtnDisabled, TextBottom } from '../styled-components/Form';
+import {
+  Form,
+  Title,
+  Input,
+  Label,
+  SubmitButton,
+  BtnDisabled,
+  TextBottom,
+} from '../styled-components/Form';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { signupDB } from './../database/queries'
+import { signupDB } from './../database/queries';
 
 function Signup() {
   const emailRef = useRef();
@@ -14,7 +22,7 @@ function Signup() {
   const { signup } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const history = useHistory();  
+  const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -25,10 +33,15 @@ function Signup() {
     try {
       setError('');
       setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value)
-      .then(data => signupDB(data.user.uid, data.user.email, userNameRef.current.value));
+      await signup(
+        emailRef.current.value,
+        passwordRef.current.value
+      ).then((data) =>
+        signupDB(data.user.uid, data.user.email, userNameRef.current.value)
+      );
       history.push('/account');
     } catch {
+      //error.status
       setError('Failed to create an account');
     }
     setLoading(false);
@@ -38,11 +51,17 @@ function Signup() {
     <div>
       <Form onSubmit={handleSubmit}>
         <Title>Sign up</Title>
-        <Label htmlFor="userName">Name:</Label>        
-        <Input type="text" id="userName" name="userName" ref={userNameRef} required/>
-        <Label htmlFor="email">Email:</Label>        
-        <Input type="email" id="email" name="email" ref={emailRef} required/>
-        <Label htmlFor="password">Password:</Label>      
+        <Label htmlFor="userName">Name:</Label>
+        <Input
+          type="text"
+          id="userName"
+          name="userName"
+          ref={userNameRef}
+          required
+        />
+        <Label htmlFor="email">Email:</Label>
+        <Input type="email" id="email" name="email" ref={emailRef} required />
+        <Label htmlFor="password">Password:</Label>
         <Input
           type="password"
           id="password"
@@ -51,7 +70,7 @@ function Signup() {
           minLength="7"
           required
         />
-        <Label htmlFor="confirmPassword">Password Confirmation:</Label>      
+        <Label htmlFor="confirmPassword">Password Confirmation:</Label>
         <Input
           type="password"
           id="confirmPassword"
@@ -60,15 +79,23 @@ function Signup() {
           minLength="7"
           required
         />
-        {error ? <p>{error}</p>: null}
+        {error ? <p>{error}</p> : null}
         {!loading ? (
           <SubmitButton type="submit" value="Sign in" />
         ) : (
           <BtnDisabled type="submit" value="Sign in" disabled />
         )}
-      <TextBottom> Already have an account ? <Link to="/login" style={{ textDecoration: 'none', color: '#79CF98' }} >LogIn</Link></TextBottom>
+        <TextBottom>
+          {' '}
+          Already have an account ?{' '}
+          <Link
+            to="/login"
+            style={{ textDecoration: 'none', color: '#79CF98' }}
+          >
+            LogIn
+          </Link>
+        </TextBottom>
       </Form>
-      
     </div>
   );
 }

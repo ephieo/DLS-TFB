@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const QuizContainer = styled.div`
-  height: 80vh;
+  margin-top: 5rem;
   padding: 0 1.5rem;
   display: flex;
   justify-content: center;
@@ -9,75 +9,84 @@ export const QuizContainer = styled.div`
 
   /* border: 1px solid black; */
 
-  @media screen and (max-width: 720px) {
+  @media (max-width: 720px) {
     flex-direction: column;
-    height: auto;
     margin-top: 1rem;
   }
 `;
 
 export const ImgCont = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 35vw;
   margin: 0 1rem;
   background: #2b2a2a;
-  padding: 1rem 0 2rem;
+  padding: 1rem 2rem;
   border-radius: 30px;
   color: #70bf81;
-  @media screen and (max-width: 720px) {
+  /* border: red solid 3px; */
+  @media (max-width: 720px) {
     width: 100%;
-    margin: 0 1rem 0.5rem;
-    padding: 0.3rem 0 0.7rem;
-    border: 5px solid #6586ca;
+    margin: 0;
+    paddin: 0;
   }
 `;
 
 export const ChoiceCont = styled.div`
-  /* border: 1px solid black;   */
-  width: 25%;
-  margin: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: ${(props) => props.width || '25vw'};
+  margin: 0 5rem;
   /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  @media screen and (max-width: 720px) {
+  justify-content: center;
+  @media (max-width: 720px) {
     width: 100%;
+    margin: 0.5rem;
   }
 `;
 
 export const QuestionBtn = styled.button`
   border: 5px solid #2b2a2a;
   display: block;
-  width: 100%;
-  height: auto;
-  margin: 0.7rem auto;
-  background-color: #abc6fd;
+  width: ${(props) => props.width || '70%'};
+  /* height: auto; */
+  margin: 0.7rem;
+  background: ${(props) => props.background || 'transparent'};
   padding: 1.2rem;
   border-radius: 7px;
-  /* box-shadow: 1px 3px 6px gray; */
-  font-size: 1.2rem;
+  border: dashed 1px #70bf81;
+  box-shadow: 6px 6px #70bf81;
+  font-size: 1rem;
+  color: #70bf81;
   cursor: pointer;
   &:hover {
     opacity: 0.7;
+    box-shadow: 1px 1px #70bf81;
   }
   @media screen and (max-width: 720px) {
-    margin: 0.4rem auto;
+    margin: 0.4rem;
     padding: 0.7rem;
     font-size: 0.9rem;
   }
 `;
 
 export const Img = styled.img`
-  display: block;
-  width: 60%;
-  margin: 1rem auto;
+  width: 100%;
+  margin: 1rem;
   border-radius: 7px;
-  box-shadow: 1px 3px 3px gray;
+  box-shadow: 5px 5px #70bf81;
   background-color: white;
+  border: dashed 1px black;
 `;
 
 export const QuestionText = styled.div`
   width: 90%;
-  margin: 1.5rem auto;
+  margin: 1.5rem;
   font-size: 1.5rem;
   @media screen and (max-width: 720px) {
     font-size: 1rem;
@@ -110,7 +119,7 @@ export const Heading = styled.p`
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 2rem;
-  text-shadow: 0px 1px 2px gray;  
+  text-shadow: 0px 1px 2px gray;
 `;
 
 export const NextBtn = styled.button`
@@ -131,7 +140,7 @@ export const Description = styled.p`
   font-size: 1.3rem;
 `;
 
-export const ResultImg = styled.img`  
+export const ResultImg = styled.img`
   display: block;
   height: 70%;
   @media screen and (max-width: 720px) {
@@ -140,9 +149,9 @@ export const ResultImg = styled.img`
   }
 `;
 
-export const ResultCont = styled.div`  
+export const ResultCont = styled.div`
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   width: 60%;
   height: 100%;
   justify-content: start;
@@ -152,26 +161,22 @@ export const ResultCont = styled.div`
   }
 `;
 
-export const AccountBtn = styled.button`  
+export const AccountBtn = styled.button`
   padding: 1rem 3rem;
   margin-top: 2rem;
-  background-color: #79CF98;
+  background-color: #79cf98;
   border: none;
   box-shadow: 1px 3px 6px gray;
-  border-radius: 10px;  
+  border-radius: 10px;
   font-size: 1rem;
   &:hover {
-    opacity: 0.8;    
+    opacity: 0.8;
   }
 `;
 
-export const ResultText = styled.p`  
+export const ResultText = styled.p`
   font-size: 1.7rem;
   @media screen and (max-width: 720px) {
     font-size: 1.2rem;
   }
 `;
-
-
-
-

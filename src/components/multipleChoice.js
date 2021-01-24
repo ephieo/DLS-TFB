@@ -39,14 +39,14 @@ export default function MultipleChoiceCard({
   }
 
   return (
-    <div>
+    <>
       <QuizContainer>
         <MainCont
-          width="60vw"
-          justify="space-between"
+          justify="center"
           background="#2b2a2a"
           border="#2b2a2a"
-          bddradius="20px"
+          bdrradius="20px"
+          mobmargin="5rem 0"
         >
           <ImgCont>
             <QuestionText>
@@ -71,6 +71,6 @@ export default function MultipleChoiceCard({
           </ChoiceCont>
         </MainCont>
       </QuizContainer>
-    </div>
+    </>
   );
 }

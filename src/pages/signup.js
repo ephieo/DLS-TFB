@@ -1,13 +1,5 @@
 import React, { useRef, useState } from 'react';
-import {
-  Form,
-  Title,
-  Input,
-  Label,
-  SubmitButton,
-  BtnDisabled,
-  TextBottom,
-} from '../styled-components/Form';
+import { FormCont, Form, Title, Input, Label, SubmitButton, BtnDisabled, TextBottom } from '../styled-components/Form';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { signupDB } from './../database/queries';
@@ -48,7 +40,7 @@ function Signup() {
   }
 
   return (
-    <div>
+    <FormCont>
       <Form onSubmit={handleSubmit}>
         <Title>Sign up</Title>
         <Label htmlFor="userName">Name:</Label>
@@ -96,7 +88,8 @@ function Signup() {
           </Link>
         </TextBottom>
       </Form>
-    </div>
+      
+    </FormCont>
   );
 }
 

@@ -26,7 +26,7 @@ function AccountPage() {
   const docRef = db.collection('users').doc(`${currentUser.uid}`);
 
   console.log(currentUser.uid);
-
+  // eslint-disable-next-line
   useEffect(() => collectionCall(docRef, collectionArr, setData), []);
 
   console.log(data);

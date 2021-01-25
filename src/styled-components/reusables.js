@@ -37,18 +37,6 @@ export const ClearText = styled.p`
   }
 `;
 
-export const FlexFooter = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: row;
-  background: #70bf81;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  height: auto;
-`;
-
 export const Card = styled.div`
   display: flex;
   justify-content: space-evenly;
@@ -207,9 +195,48 @@ export const Break = styled.div`
 `;
 
 export const Video = styled.video`
-  width: 60vw;
+  margin-top: 7rem;
+  width:55vw;
+  box-shadow: 1px 3px 5px gray;
   @media (max-width: 720px) {
     width: 85vw;
+  }
+`;
+
+export const RsrcImg = styled.img`  
+  background: transparent;
+  @media (max-width: 720px) {
+    display: none;
+  }
+`;
+
+export const RsrcCont = styled.div`
+  width: 16%;
+  margin: 0 1.7rem;
+  box-shadow: 1px 3px 5px gray;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #e7edfd;
+  @media (max-width: 1072px) {
+    width: 25%;
+    margin: 0.5rem;    
+  }
+  @media (max-width: 720px) {
+    width: 50vw;
+    margin: 0.5rem;    
+  }
+`;
+
+export const RsrcText = styled.p`
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #495963;
+  @media (max-width: 720px) {
+    font-size: 0.7rem;
+    margin: 1rem 0;
+      
   }
 `;
 

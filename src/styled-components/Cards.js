@@ -5,9 +5,7 @@ export const QuizContainer = styled.div`
   padding: 0 1.5rem;
   display: flex;
   justify-content: center;
-  align-items: center;
-
-  /* border: 1px solid black; */
+  align-items: center; 
 
   @media (max-width: 720px) {
     flex-direction: column;
@@ -93,8 +91,7 @@ export const QuestionText = styled.div`
   }
 `;
 
-export const DscCont = styled.div`
-  /* border: 7px solid #3F9885;   */
+export const DscCont = styled.div`  
   width: 65%;
   height: 75%;
   display: flex;
@@ -171,12 +168,5 @@ export const AccountBtn = styled.button`
   font-size: 1rem;
   &:hover {
     opacity: 0.8;
-  }
-`;
-
-export const ResultText = styled.p`
-  font-size: 1.7rem;
-  @media screen and (max-width: 720px) {
-    font-size: 1.2rem;
   }
 `;

@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
-import { Form, Title, Input, Label, SubmitButton, BtnDisabled, TextBottom } from '../styled-components/Form';
+import { FormCont, Form, Title, Input, Label, SubmitButton, BtnDisabled, TextBottom } from '../styled-components/Form';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import {WarningDiv} from '../styled-components/reusables';
 
 function ForgotPassword() {
   const emailRef = useRef();
@@ -19,18 +20,18 @@ function ForgotPassword() {
       setLoading(true);
       await resetPassword(emailRef.current.value);
       setMessage('Check your inbox for futher instructions');
-    } catch {
-      setError('Failed to reset password');
+    } catch (error) {
+      setError(error.message);
     }
     setLoading(false);
   }
   return (
-    <div>
+    <FormCont>
       <Form onSubmit={handleSubmit}>
         <Title>Password Reset</Title>
         <Label htmlFor="email">Email:</Label>        
         <Input type="email" id="email" name="email" ref={emailRef} required/>
-        {error ? <p>{error}</p> : null}
+        {error ? <WarningDiv>{error}</WarningDiv> : null}
         {!loading ? (
           <SubmitButton type="submit" value="Reset Password" />
         ) : (
@@ -41,8 +42,7 @@ function ForgotPassword() {
         
       </Form>
       {message ? alert(message) : null}
-
-    </div>
+    </FormCont>
   );
 }
 

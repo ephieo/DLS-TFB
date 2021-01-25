@@ -6,7 +6,7 @@ import {
   QuestionBtn,
   Img,
 } from './../styled-components/Cards';
-import { MainCont } from './../styled-components/reusables';
+import { MainCont, WhitespaceDiv } from './../styled-components/reusables';
 
 export default function FlashCard({
   data,
@@ -37,7 +37,7 @@ export default function FlashCard({
 
   return (
     <MainCont flexdir="column" margin="5rem">
-      <MainCont flexdir="column" background="#2b2a2a" bdrradius="20px">
+      <MainCont flexdir="column" background="#2b2a2a" bdrradius="20px" mgntop="5rem">
         <QuizContainer>
           <ImgCont>
             <h1>{data[question].questionNum}</h1>
@@ -59,6 +59,7 @@ export default function FlashCard({
           </>
         ))}
       </MainCont>
+      <WhitespaceDiv/>
     </MainCont>
   );
 }

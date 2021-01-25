@@ -18,6 +18,7 @@ export const Button = styled.button`
   background: ${(props) => props.background || '#93d4c4'};
   margin: ${(props) => props.margin || '1rem'};
   padding: ${(props) => props.padding || '1rem 0.5rem'};
+  color:#516068;
 `;
 
 export const Logo = styled.img`
@@ -35,18 +36,6 @@ export const ClearText = styled.p`
   @media (max-width: 350px) {
     font-size: 9px;
   }
-`;
-
-export const FlexFooter = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: row;
-  background: #70bf81;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  height: auto;
 `;
 
 export const Card = styled.div`
@@ -94,6 +83,7 @@ export const MainCont = styled.div`
   height: ${(props) => props.height || ''};
   width: ${(props) => props.width || ''};
   margin: ${(props) => props.margin || ''};
+  margin-top:${(props) => props.mgntop || ''};
   padding: ${(props) => props.padding || ''};
   border: ${(props) => props.border || ''};
   border-radius: ${(props) => props.bdrradius || '0'};
@@ -120,7 +110,7 @@ export const StageBtn = styled.button`
   display: flex;
   justify-content: ${(props) => props.justify || 'center'};
   align-items: ${(props) => props.align || 'center'};
-  margin: 1rem;
+  margin: 5rem;
   padding: 1rem 1.5rem;
   font-size: 1.5rem;
   background: ${(props) => props.background || ''};
@@ -137,6 +127,13 @@ export const StageBtn = styled.button`
   :hover {
     box-shadow: ${(props) =>
       props.mobBoxShad || '3px -3px #325138, -1px 1px #325138, 0 0 #325138'};
+  }
+
+  @media (max-width:789px){
+    font-size:0.8rem;
+    width:20vw;
+    height:15vh;
+    margin-top:2rem;
   }
 `;
 
@@ -207,9 +204,48 @@ export const Break = styled.div`
 `;
 
 export const Video = styled.video`
-  width: 60vw;
+  margin-top: 7rem;
+  width:55vw;
+  box-shadow: 1px 3px 5px gray;
   @media (max-width: 720px) {
     width: 85vw;
+  }
+`;
+
+export const RsrcImg = styled.img`  
+  background: transparent;
+  @media (max-width: 720px) {
+    display: none;
+  }
+`;
+
+export const RsrcCont = styled.div`
+  width: 16%;
+  margin: 0 1.7rem;
+  box-shadow: 1px 3px 5px gray;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #e7edfd;
+  @media (max-width: 1072px) {
+    width: 25%;
+    margin: 0.5rem;    
+  }
+  @media (max-width: 720px) {
+    width: 50vw;
+    margin: 0.5rem;    
+  }
+`;
+
+export const RsrcText = styled.p`
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #495963;
+  @media (max-width: 720px) {
+    font-size: 0.7rem;
+    margin: 1rem 0;
+      
   }
 `;
 
@@ -221,3 +257,20 @@ export const Icon = styled.img`
     width: 30px;
   }
 `;
+
+export const WarningDiv = styled.div`
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  height:10vh;
+  border:solid #FC664D 7px;
+  background:#FFE4DF;
+  color:#FC664D;
+
+`
+
+export const WhitespaceDiv = styled.div`
+width:100%;
+height:10vh;
+`

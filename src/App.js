@@ -19,6 +19,7 @@ import OptionsPage from './pages/optionsPage';
 import AboutUs from './pages/aboutPage';
 // import Footer from './components/footer';
 import VideoPage from './pages/videosPage';
+import Resources from './pages/resourcesPage';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <PrivateRoute path="/k3/quiz-option" component={K3QuizOptionPage} />
           <PrivateRoute path="/k4/quiz-option" component={K4QuizOptionPage} />
           <PrivateRoute path="/about" component={AboutUs} />
+          <PrivateRoute path="/resources" component={Resources} />
           <PrivateRoute path="/options" component={OptionsPage} />
           <PrivateRoute path="/video" component={VideoPage} />
           <PrivateRoute

@@ -27,8 +27,8 @@ export default function DescriptionCard({
   }
   return (
     <div>
-      <QuizContainer>
-        <DscCont style={{backgroundColor: background}}>
+      <QuizContainer style={{ height: "90vh"}}>
+        <DscCont style={{backgroundColor: "transparent"}}>
           <ContentCont>{answerObj.answer ? (<img src={correct} alt="correct" />):(<img src={incorrect} alt="incorrect" />)}</ContentCont>
           <ContentCont>
             {answerObj.answer ? (

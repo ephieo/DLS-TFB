@@ -57,7 +57,8 @@ if(stage){
     }, 3000);
     if(stage) {dataCall(docRef,collectionArr,setData)}
       return () => clearTimeout(timer);
-    }, []);
+    // eslint-disable-next-line
+    },[]);
 
 
 

@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
-import { Form, Title, Input, Label, SubmitButton, BtnDisabled, TextBottom } from '../styled-components/Form';
+import { FormCont, Form, Title, Input, Label, SubmitButton, BtnDisabled, TextBottom } from '../styled-components/Form';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { WarningDiv } from '../styled-components/reusables';
 
 function AccountUpdate() {
   const emailRef = useRef();
@@ -37,8 +38,8 @@ function AccountUpdate() {
       .then(() => {
         history.push('/account');
       })
-      .catch(() => {
-        setError('Failed to update account');
+      .catch((error) => {
+        setError(error.message);
       })
       .finally(() => {
         setLoading(false);
@@ -46,7 +47,7 @@ function AccountUpdate() {
   }
 
   return (
-    <div>
+    <FormCont>
       <Form onSubmit={handleSubmit}>
         <Title>Update</Title>
         <Label htmlFor="email">Email:</Label>
@@ -75,7 +76,7 @@ function AccountUpdate() {
           minLength="7"
           placeholder="If keeping password leave this space blank"
         />
-        {error ? <p>{error}</p> : null}
+        {error ? <WarningDiv>{error}</WarningDiv> : null}
         {!loading ? (
           <SubmitButton type="submit" value="Update" />
         ) : (
@@ -83,7 +84,7 @@ function AccountUpdate() {
         )}
         <TextBottom>Don't wnat to update? <Link to="/account" style={{ textDecoration: 'none', color: '#79CF98' }} >Go back to Account</Link></TextBottom>
       </Form>      
-    </div>
+    </FormCont>
   );
 }
 

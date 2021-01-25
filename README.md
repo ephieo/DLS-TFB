@@ -33,5 +33,3 @@ An app that uses educational quizzes and resources to help fight against fake ne
 - Ephie Oyedoh - Fullstack Developer
 
 # Week 2 Sprint Recap
-
-uheygtfchgjhbkjnlkkvjgchfgvj

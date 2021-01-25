@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import {
-  QuestionBtn
-} from '../styled-components/Cards';
 
 import { db } from './../database/firebase';
 import { Link, useLocation } from 'react-router-dom';
@@ -34,6 +31,7 @@ export default function MultipleChoice() {
   const [stage, setStage] = useState('key-stage-3');
   const [timer,setTimer] = useState(false);
   const [video,setVideo] = useState(false);
+  const [pointAdded,setPointAdded] = useState(false);
 
   
 const location = useLocation();
@@ -61,6 +59,7 @@ useEffect(() => {
   if(stage){return dataCall(docRef,collectionArr,setData)}
     
     return () => clearTimeout(timer);
+  // eslint-disable-next-line
   }, []);    
 
 
@@ -96,16 +95,20 @@ useEffect(() => {
         win && timer ?  (
           <ResultCard imgSrc={winner} text={'Congrats!! '}>
 
-          <Link to="/account">
+          { !pointAdded ? (
+          
           <AccountBtn
             onClick={() => {
               updateScore(currentUser.uid);
+              setPointAdded(true)
             }}
             background={'#08302e'}
           >
-            Click Here to Save progress !
-          </AccountBtn>
-        </Link>
+            Click Here to Save points !
+          </AccountBtn>        
+
+          ) : (<Link to="/account"><AccountBtn>Go to Account</AccountBtn></Link>)}
+
           </ResultCard>
         ) : !win && timer ?(          
           <ResultCard imgSrc={noPoint} text={'Better luck next time!! '} ><Link to="/account"><AccountBtn>Account</AccountBtn></Link></ResultCard> 

@@ -40,14 +40,14 @@ function AccountPage() {
     } catch {}
   }
   return (
-    <MainCont width="100vw">
-      <MainCont margin=" 7rem 0 4rem">
+    <MainCont width="100vw" align="center">
+      <MainCont margin=" 4rem 0">
         <Img
           src={accountImg}
           alt="illustration of a community of people"
           width="55vw"
         />
-        <AccCard padding="1rem" border="#b0c5f8 solid 3px">
+        <AccCard padding="1rem" border="#b0c5f8 solid 3px" width="25vw">
           <AccountBox
             nameInput={data ? data[0].userName : ''}
             emailInput={

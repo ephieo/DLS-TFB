@@ -15,7 +15,7 @@ import aboutUs from './../images/about-us.svg';
 
 function OptionsPage() {
   return (
-    <MainCont height="80vh" margin="1rem" style={{ paddingTop: " 5rem"}}>
+    <MainCont height="120vh" margin="1rem">
       <CardCont>
         <Link to="/quiz-stage">
           <Card>
@@ -37,7 +37,8 @@ function OptionsPage() {
             <OptionsImg
               src={aboutUs}
               alt="icon for  the link to the About us page"
-              width="30vw"
+              width="18vw"
+              mobwidth="35vw"
               mrgbtm="2rem"
             />
             <ClearText color="#b0c5f8">ABOUT US</ClearText>

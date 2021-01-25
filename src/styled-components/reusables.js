@@ -29,8 +29,11 @@ export const ClearText = styled.p`
   background: transparent;
   color: ${(props) => props.color || 'black'};
   font-size: 24px;
-  @media (max-width: 400px) {
-    font-size: 15px;
+  @media (max-width: 750px) {
+    font-size: 10px;
+  }
+  @media (max-width: 350px) {
+    font-size: 9px;
   }
 `;
 
@@ -40,12 +43,16 @@ export const Card = styled.div`
   align-items: center;
   flex-direction: column;
   background: ${(props) => props.background || '#495963'};
-  width: ${(props) => props.width || '18vw'};
-  height: ${(props) => props.height || '18vw'};
+  width: ${(props) => props.width || ''};
+  height: ${(props) => props.height || ''};
   margin: ${(props) => props.margin || '1rem'};
   border: ${(props) => props.border || '#93d4c4 solid 3px'};
   border-radius: 10px;
   color: #b0c5f8;
+
+  :hover {
+    border: #93d4c4 solid 10px;
+  }
 `;
 
 export const CardCont = styled.div`
@@ -75,22 +82,26 @@ export const MainCont = styled.div`
   height: ${(props) => props.height || ''};
   width: ${(props) => props.width || ''};
   margin: ${(props) => props.margin || ''};
+  padding: ${(props) => props.padding || ''};
   border: ${(props) => props.border || ''};
   border-radius: ${(props) => props.bdrradius || '0'};
   /* border: red solid 3px; */
 
-  @media (max-width: 400px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
-    margin: 1rem 0;
-    max-width: 100%;
+    margin: ${(props) => props.mobmargin || '5rem 0'};
     overflow-x: hidden;
   }
 `;
 
 export const OptionsImg = styled.img`
-  width: ${(props) => props.width || '25vw'};
+  width: ${(props) => props.width || '15vw'};
   margin-bottom: ${(props) => props.mrgbtm || '0'};
   background: transparent;
+
+  @media (max-width: 750px) {
+    width: ${(props) => props.mobwidth || '35vw'};
+  }
 `;
 
 export const StageBtn = styled.button`
@@ -156,12 +167,13 @@ export const AccCard = styled.div`
   padding: ${(props) => props.padding || ''};
   line-height: 2rem;
 
-  @media (max-width: 400px) {
-    width: 80vw;
-    height: 40vh;
+  @media (max-width: 750px) {
+    width: 70vw;
+    /* height: 40vh; */
     overflow: scroll;
     font-size: 10px;
     border: #70bf81 solid 3px;
+
     border-left: '';
     border-right: '';
     border-bottom: '';
@@ -187,8 +199,8 @@ export const Video = styled.video`
   width:55vw;
   box-shadow: 1px 3px 5px gray;
   @media (max-width: 720px) {
-      width: 85vw;
-    }
+    width: 85vw;
+  }
 `;
 
 export const RsrcImg = styled.img`  
@@ -225,5 +237,14 @@ export const RsrcText = styled.p`
     font-size: 0.7rem;
     margin: 1rem 0;
       
+  }
+`;
+
+export const Icon = styled.img`
+  display: block;
+  width: 40px;
+  margin: 2px auto;
+  @media (max-width: 400px) {
+    width: 30px;
   }
 `;

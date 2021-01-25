@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import {
-  QuestionBtn
-} from '../styled-components/Cards';
 
 import { db } from './../database/firebase';
 import { Link, useLocation } from 'react-router-dom';
@@ -62,6 +59,7 @@ useEffect(() => {
   if(stage){return dataCall(docRef,collectionArr,setData)}
     
     return () => clearTimeout(timer);
+  // eslint-disable-next-line
   }, []);    
 
 

@@ -18,6 +18,7 @@ export const Button = styled.button`
   background: ${(props) => props.background || '#93d4c4'};
   margin: ${(props) => props.margin || '1rem'};
   padding: ${(props) => props.padding || '1rem 0.5rem'};
+  color:#516068;
 `;
 
 export const Logo = styled.img`
@@ -82,6 +83,7 @@ export const MainCont = styled.div`
   height: ${(props) => props.height || ''};
   width: ${(props) => props.width || ''};
   margin: ${(props) => props.margin || ''};
+  margin-top:${(props) => props.mgntop || ''};
   padding: ${(props) => props.padding || ''};
   border: ${(props) => props.border || ''};
   border-radius: ${(props) => props.bdrradius || '0'};
@@ -108,7 +110,7 @@ export const StageBtn = styled.button`
   display: flex;
   justify-content: ${(props) => props.justify || 'center'};
   align-items: ${(props) => props.align || 'center'};
-  margin: 1rem;
+  margin: 5rem;
   padding: 1rem 1.5rem;
   font-size: 1.5rem;
   background: ${(props) => props.background || ''};
@@ -125,6 +127,13 @@ export const StageBtn = styled.button`
   :hover {
     box-shadow: ${(props) =>
       props.mobBoxShad || '3px -3px #325138, -1px 1px #325138, 0 0 #325138'};
+  }
+
+  @media (max-width:789px){
+    font-size:0.8rem;
+    width:20vw;
+    height:15vh;
+    margin-top:2rem;
   }
 `;
 
@@ -248,3 +257,20 @@ export const Icon = styled.img`
     width: 30px;
   }
 `;
+
+export const WarningDiv = styled.div`
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  height:10vh;
+  border:solid #FC664D 7px;
+  background:#FFE4DF;
+  color:#FC664D;
+
+`
+
+export const WhitespaceDiv = styled.div`
+width:100%;
+height:10vh;
+`

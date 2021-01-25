@@ -93,12 +93,12 @@ export const QuestionText = styled.div`
 
 export const DscCont = styled.div`  
   width: 65%;
-  height: 75%;
+  height: 55%;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 9px;
-  box-shadow: 1px 3px 6px gray;
+  /* box-shadow: 1px 3px 6px gray; */
   @media screen and (max-width: 720px) {
     flex-direction: column;
     width: 95%;

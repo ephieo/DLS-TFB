@@ -15,6 +15,7 @@ import winner from './../images/winner2.svg';
 import noPoint from './../images/learning.svg';
 
 import VideoPage from './videosPage';
+import {WhitespaceDiv} from './../styled-components/reusables';
 
 import { AccountBtn } from './../styled-components/Cards'
 
@@ -116,6 +117,7 @@ useEffect(() => {
       ) : (
        'null'
       )} </> : <VideoPage setVideo={setVideo} />}
+      <WhitespaceDiv/>
     </div> 
   );
 }

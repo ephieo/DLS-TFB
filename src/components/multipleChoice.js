@@ -47,6 +47,7 @@ export default function MultipleChoiceCard({
           border="#2b2a2a"
           bdrradius="20px"
           mobmargin="5rem 0"
+          mgntop="5rem"
         >
           <ImgCont>
             <QuestionText>

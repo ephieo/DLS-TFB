@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
-import { FormCont, Form, Title, Input, Label, SubmitButton, BtnDisabled, TextBottom } from '../styled-components/Form';
+import { FormCont, Form, Title, Input, Label, SubmitButton, BtnDisabled, TextBottom} from '../styled-components/Form';
+import {WarningDiv} from '../styled-components/reusables';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { signupDB } from './../database/queries';
@@ -12,7 +13,7 @@ function Signup() {
   //calling and intializing useAuth() to use the signup function to create new users and call
   //the unsubsribe function in the useffect()
   const { signup } = useAuth();
-  const [error, setError] = useState('');
+  const [errorMess, setErrorMess] = useState('');
   const [loading, setLoading] = useState(false);
   const history = useHistory();
 
@@ -20,22 +21,21 @@ function Signup() {
     e.preventDefault();
 
     if (passwordRef.current.value !== confirmPasswordRef.current.value) {
-      return setError('Passwords do not match');
+      return setErrorMess('Passwords do not match');
     }
     try {
-      setError('');
+      setErrorMess('');
       setLoading(true);
       await signup(
         emailRef.current.value,
         passwordRef.current.value
       ).then((data) =>
         signupDB(data.user.uid, data.user.email, userNameRef.current.value)
-      );
-      history.push('/account');
-    } catch {
-      //error.status
-      setError('Failed to create an account');
-    }
+        )
+       history.push('/account')
+      } catch (error) {
+        setErrorMess(error.message);  
+      }
     setLoading(false);
   }
 
@@ -71,7 +71,9 @@ function Signup() {
           minLength="7"
           required
         />
-        {error ? <p>{error}</p> : null}
+        
+        {errorMess ? <WarningDiv><h1>{errorMess}</h1></WarningDiv> : null}
+        
         {!loading ? (
           <SubmitButton type="submit" value="Sign in" />
         ) : (

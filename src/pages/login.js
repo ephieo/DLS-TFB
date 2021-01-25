@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { FormCont, Form, Title, Input, Label, SubmitButton, BtnDisabled, Text, TextBottom } from '../styled-components/Form';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import {WarningDiv} from '../styled-components/reusables';
 
 function Login() {
   const emailRef = useRef();
@@ -21,10 +22,11 @@ function Login() {
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
       history.push('/account');
-    } catch {
-      setError('Your email address or password is not correct.');
+    } catch (error) {
+      setError(error.message);
     }
     setLoading(false);
+    
   }
   return (
     <FormCont>
@@ -44,7 +46,7 @@ function Login() {
         <Text>
           <Link to="/forgot-password" style={{ textDecoration: 'none', color: 'black' }} >Forgot Password?</Link>
         </Text>
-        {error ? <p>{error}</p> : null}
+        {error ? <WarningDiv>{error}</WarningDiv> : null}
         {!loading ? (
           <SubmitButton type="submit" value="Log in"/>
         ) : (

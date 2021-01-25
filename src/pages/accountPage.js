@@ -26,8 +26,10 @@ function AccountPage() {
   const docRef = db.collection('users').doc(`${currentUser.uid}`);
 
   console.log(currentUser.uid);
+
+  useEffect(() => collectionCall(docRef, collectionArr, setData), 
   // eslint-disable-next-line
-  useEffect(() => collectionCall(docRef, collectionArr, setData), []);
+  []);
 
   console.log(data);
 
@@ -41,7 +43,7 @@ function AccountPage() {
   }
   return (
     <MainCont width="100vw" align="center">
-      <MainCont margin=" 4rem 0">
+      <MainCont margin=" 4rem 0" mgntop="7rem">
         <Img
           src={accountImg}
           alt="illustration of a community of people"

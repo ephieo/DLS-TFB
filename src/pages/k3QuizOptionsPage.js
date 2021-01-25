@@ -12,7 +12,7 @@ export default function K3QuizOptionPage() {
       <>
         {!location.pathname.includes('multiple-choice') &&
         !location.pathname.includes('flash-card') ? (
-          <MainCont height="78vh">
+          <MainCont height="78vh" >
             <Link to="/k3/quiz-option/multiple-choice">
               <StageBtn
                 boxShad="15px -15px #70bf81, -15px 15px #70bf81, 0 0 #70bf81"

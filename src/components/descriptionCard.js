@@ -27,7 +27,7 @@ export default function DescriptionCard({
   }
   return (
     <div>
-      <QuizContainer style={{ height: "90vh"}}>
+      <QuizContainer style={{ height: "80vh"}}>
         <DscCont style={{backgroundColor: "transparent"}}>
           <ContentCont>{answerObj.answer ? (<img src={correct} alt="correct" />):(<img src={incorrect} alt="incorrect" />)}</ContentCont>
           <ContentCont>
@@ -37,7 +37,7 @@ export default function DescriptionCard({
               <Heading>Incorrect!</Heading>
             )}
             <Description>{answerObj.description}</Description>
-            <NextBtn onClick={nextQuestion}>Next</NextBtn>
+            <NextBtn onClick={nextQuestion}>Next >></NextBtn>
           </ContentCont>
         </DscCont>
       </QuizContainer>

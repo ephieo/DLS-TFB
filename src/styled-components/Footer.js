@@ -18,7 +18,7 @@ box-shadow: -3px 1px 5px gray;
   background-color: white;
   background: white;
   justify-content: flex-end;
-  padding: 1.2rem 15rem 0 0;
+  padding: 1rem 8rem 0 0;
   box-shadow: none;  
 }
 `;

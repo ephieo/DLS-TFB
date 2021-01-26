@@ -19,6 +19,7 @@ export const Button = styled.button`
   margin: ${(props) => props.margin || '1rem'};
   padding: ${(props) => props.padding || '1rem 0.5rem'};
   color:#516068;
+  cursor: pointer;
 `;
 
 export const Logo = styled.img`
@@ -66,6 +67,7 @@ export const CardCont = styled.div`
   /* border: #93d4c4 solid 3px; */
   height: ${(props) => props.height || ''};
   margin-top: ${(props) => props.mrgtop || ''};
+  margin-bottom: ${(props) => props.mrgbottom || ''};
 
   @media (max-width: 400px) {
     width: 40vw;

@@ -15,8 +15,8 @@ import aboutUs from './../images/about-us.svg';
 
 function OptionsPage() {
   return (
-    <MainCont height="120vh" margin="1rem">
-      <CardCont>
+    <MainCont height="95vh" margin="1rem">
+      <CardCont mrgtop="8rem" mrgbottom="5rem">
         <Link to="/quiz-stage">
           <Card>
             <OptionsImg src={quiz} alt="icon for  the link to thequiz page" />

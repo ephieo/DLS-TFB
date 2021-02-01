@@ -269,10 +269,13 @@ export const WarningDiv = styled.div`
   border:solid #FC664D 7px;
   background:#FFE4DF;
   color:#FC664D;
-
-`
+`;
 
 export const WhitespaceDiv = styled.div`
-width:100%;
-height:10vh;
-`
+  width:100%;
+  height:10vh;
+`;
+
+export const AboutText = styled.p`
+  margin: 1.3rem 0 0 0;
+`;

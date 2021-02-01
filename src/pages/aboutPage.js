@@ -5,6 +5,7 @@ import {
   AccCard,
   Img,
   Break,
+  AboutText
 } from './../styled-components/reusables';
 
 import phoneImg1 from './../images/about-us-1.svg';
@@ -23,12 +24,17 @@ export default function AboutUs() {
           width="30vw"
           padding="2rem"
         >
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged.
+          <h3 style={{ marginBottom: "1rem" }}>The Digital Life Skills Company</h3>
+          <AboutText>The Digital Life Skills Company is a social enterprise that teaches children and young people how to make sense of the digital information - and misinformation - at their fingertips.</AboutText>        
+          <AboutText>Young people are increasingly turning to digital media for their information and yet too many of them are:</AboutText>
+          <ul style={{ margin: "0.7rem 0 0 2rem" }}>
+            <li>Unable to differentiate fact from fiction online</li>
+            <li>Susceptible to hate-fuelled agendas</li>
+            <li>Made anxious or scared by false news stories</li>
+            <li>Vulnerable to conspiracy theories, scams and hoaxes</li>
+            <li>Unable to access reliable information, useful resources or support online.</li>
+          </ul>
+          <AboutText>Our aim is to give young people the skills they need to effectively evaluate what they see online and avoid being misled.</AboutText>
         </AccCard>
         <Img
           src={phoneImg1}
@@ -51,12 +57,8 @@ export default function AboutUs() {
           width="30vw"
           padding="2rem"
         >
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. o
+        <h3 style={{ marginBottom: "1rem" }}>Checkify</h3>
+        <AboutText>Checkify is a framework developed by the Digital Life Skills Company to help children and young people quickly evaluate the information they see online.  We like to think we are introducing young people to fact-checking the way fact-checkers do it because we know that they are the best when it comes to verifying online content. </AboutText>
         </AccCard>
       </MainCont>
       <Break skew=" skewY(18deg)" />
@@ -69,12 +71,13 @@ export default function AboutUs() {
           width="30vw"
           padding="2rem"
         >
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged.{' '}
+          <AboutText>Checkify takes young people through an online verification process that, like the fact-checkers, asks three main questions:</AboutText>
+          <ol>
+            <li>Who is behind this?</li>
+            <li>What is the evidence?</li>
+            <li>What do other sources say?</li>
+          </ol>
+          <AboutText>By working their way through the videos and quizzes that address these three questions, users will acquire the skills they need to be discerning when it comes to online misinformation and avoid being misled.</AboutText>
         </AccCard>
         <Img
           src={phoneImg3}

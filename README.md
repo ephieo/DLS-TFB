@@ -2,11 +2,13 @@
 
 An app that uses educational quizzes and resources to help fight against fake news and provide digital literacy skills to students.
 
-## How to use ?
+## How to run locally ?
 
 - Clone repo
 - run `npm i`
+- make sure you have access to the `.env.local` file.
 - run `npm run start`
+
 
 ## Design week
 
@@ -25,11 +27,12 @@ An app that uses educational quizzes and resources to help fight against fake ne
 
 ![image](https://user-images.githubusercontent.com/60614102/104489629-c19bd400-55c7-11eb-907d-f269f193fce9.png)
 
-# Week 1 Sprint Recap :
+### Final app design 
+
+![image](https://user-images.githubusercontent.com/60614102/106606098-a0405f00-6559-11eb-8582-186cba486670.png)
 
 # Team
 
 - Jihyun Jang - Fullstack Developer
 - Ephie Oyedoh - Fullstack Developer
 
-# Week 2 Sprint Recap

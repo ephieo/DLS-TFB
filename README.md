@@ -2,6 +2,10 @@
 
 An app that uses educational quizzes and resources to help fight against fake news and provide digital literacy skills to students.
 
+## Access Web App via the following link:
+
+https://tfb-production.firebaseapp.com/
+
 ## How to run locally ?
 
 - Clone repo
